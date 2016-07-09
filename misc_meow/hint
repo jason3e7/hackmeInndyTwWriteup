@@ -1,0 +1,22 @@
+key :
+1. file format
+2. 10173502_279586372215628_1950740854_n.png
+	https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xat1/t39.1997-6/p296x100/10173502_279586372215628_1950740854_n.png
+3. remove png save zip
+	3.1 use HxD 
+	3.2 find png file format end 
+	3.3 delete all png and save
+4. pkcrack
+	4.1 install
+		4.1.1 wget https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack/pkcrack-1.2.2.tar.gz
+		4.1.2 tar xzf pkcrack-1.2.2.tar.gz
+		4.1.3 cd pkcrack-1.2.2/src
+		4.1.4 make
+		(option)
+		4.1.5 mkdir -p ../../bin
+		4.1.6 cp extract findkey makekey pkcrack zipdecrypt ../../bin
+		4.1.4 cd ../../
+	4.2 usage
+		4.2.1 pkcrack -C [crypted_file] -c [mapping file path] -P [plaintext_file] -p [mapping file path] -d [output] -a
+		4.2.2 suggest -c and -p is same path
+		4.2.3 findkey will be funny !
