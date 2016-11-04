@@ -9,6 +9,9 @@
 	str_replace("'", "\\'", $str)
 3. name=guest&password=guest
 4. <!-- debug: -->
-5. bmFtZT1udWxsJnBhc3N3b3JkPVwnIG9yIGBpc19hZG1pbmA9dHJ1ZTstLQ==
-6. RkxBR3tcJyBVTklPTiBTRUxFQ1QgIkkgS25vdyBTUUwgSW5qZWN0aW9uIiAjfQ==
-7. flag2 in the database!
+5.
+// table schema
+// user -> id, user, password, is_admin
+6. bmFtZT1udWxsJnBhc3N3b3JkPVwnIG9yIGBpc19hZG1pbmA9dHJ1ZTstLQ==
+7. RkxBR3tcJyBVTklPTiBTRUxFQ1QgIkkgS25vdyBTUUwgSW5qZWN0aW9uIiAjfQ==
+8. flag2 in the database!
