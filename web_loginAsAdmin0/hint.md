@@ -11,3 +11,4 @@
 4. <!-- debug: -->
 5. bmFtZT1udWxsJnBhc3N3b3JkPVwnIG9yIGBpc19hZG1pbmA9dHJ1ZTstLQ==
 6. RkxBR3tcJyBVTklPTiBTRUxFQ1QgIkkgS25vdyBTUUwgSW5qZWN0aW9uIiAjfQ==
+7. flag2 in the database!
