@@ -1,0 +1,1194 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="1.7.35" exportTime="Fri Nov 23 15:08:47 CST 2018">
+  <item>
+    <time>Fri Nov 23 15:06:05 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/index.php]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/index.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /index.php HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+If-Modified-Since: Fri, 23 Nov 2018 07:05:37 GMT
+
+]]></request>
+    <status>200</status>
+    <responselength>1700</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 23 Nov 2018 07:06:05 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Set-Cookie: PHPSESSID=40hn96evkh8snmioicpf2sat42; path=/
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Fri, 23 Nov 2018 07:06:05 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1299
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>dafuqManager :: Login</title>
+    <link rel="stylesheet" href="style/style.css" media="all">
+</head>
+<body>
+<center>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td class="title"><div style="margin: .2em 2.5%;">Login</div></td>
+    </tr>
+  </tbody>
+</table>
+
+<BR><TABLE width="300"><TR><TD colspan="2" class="header" nowrap><B>Login to use dafuqManager</B></TD></TR>
+<FORM name="login" action="https://dafuq-manager.hackme.inndy.tw/index.php?action=login&order=name&srt=yes" method="post">
+<TR><TD>Username:</TD><TD align="right"><INPUT name="p_user" type="text" size="25"></TD></TR>
+<TR><TD>Password:</TD><TD align="right"><INPUT name="p_pass" type="password" size="25"></TD></TR>
+<TR><TD>Language:</TD><TD align="right"><SELECT name="lang">
+<OPTION value="cht">￧ﾹﾁ￩ﾫﾔ￤ﾸﾭ￦ﾖﾇ</OPTION>
+<OPTION value="en">English</OPTION>
+
+</SELECT></TD></TR>
+<TR><TD colspan="2" align="right"><INPUT type="submit" value="Login" class="button"></TD></TR>
+</FORM></TABLE><BR>guest / guest for test
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    if(document.login) document.login.p_user.focus();
+// -->
+</script><hr>
+<small>Hope that you like this damn vulnerable dafuqManager :)</small>
+</center></body>
+</html>]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 23 15:06:22 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/index.php?action=login&order=name&srt=yes]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/index.php?action=login&order=name&srt=yes]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /index.php?action=login&order=name&srt=yes HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Content-Length: 33
+Cache-Control: max-age=0
+Origin: https://dafuq-manager.hackme.inndy.tw
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=40hn96evkh8snmioicpf2sat42
+
+p_user=guest&p_pass=guest&lang=en]]></request>
+    <status>200</status>
+    <responselength>13635</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 23 Nov 2018 07:06:22 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Set-Cookie: show_hidden=no; expires=Fri, 23-Nov-2018 08:06:22 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Fri, 23-Nov-2018 08:06:22 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Fri, 23-Nov-2018 08:06:22 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Fri, 23-Nov-2018 08:06:22 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Fri, 23-Nov-2018 08:06:22 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Fri, 23-Nov-2018 08:06:22 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Fri, 23-Nov-2018 08:06:22 GMT; Max-Age=3600
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Fri, 23 Nov 2018 07:06:22 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 12724
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>dafuqManager :: Directory: /</title>
+    <link rel="stylesheet" href="style/style.css" media="all">
+</head>
+<body>
+<center>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td class="title"><div style="margin: .2em 2.5%;">[guest] - Directory: /</div></td>
+    </tr>
+  </tbody>
+</table>
+
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    // Checkboxes
+    function Toggle(e) {
+        if(e.checked) {
+            Highlight(e);
+            document.selform.toggleAllC.checked = AllChecked();
+        } else {
+            UnHighlight(e);
+            document.selform.toggleAllC.checked = false;
+        }
+       }
+
+    function ToggleAll(e) {
+        if(e.checked) CheckAll();
+        else ClearAll();
+    }
+    
+    function CheckAll() {
+        var ml = document.selform;
+        var len = ml.elements.length;
+        for(var i=0; i<len; ++i) {
+            var e = ml.elements[i];
+            if(e.name == "selitems[]") {
+                e.checked = true;
+                Highlight(e);
+            }
+        }
+        ml.toggleAllC.checked = true;
+    }
+
+    function ClearAll() {
+        var ml = document.selform;
+        var len = ml.elements.length;
+        for (var i=0; i<len; ++i) {
+            var e = ml.elements[i];
+            if(e.name == "selitems[]") {
+                e.checked = false;
+                UnHighlight(e);
+            }
+        }
+        ml.toggleAllC.checked = false;
+    }
+
+    function AllChecked() {
+        ml = document.selform;
+        len = ml.elements.length;
+        for(var i=0; i<len; ++i) {
+            if(ml.elements[i].name == "selitems[]" && !ml.elements[i].checked) return false;
+        }
+        return true;
+    }
+    
+    function NumChecked() {
+        ml = document.selform;
+        len = ml.elements.length;
+        num = 0;
+        for(var i=0; i<len; ++i) {
+            if(ml.elements[i].name == "selitems[]" && ml.elements[i].checked) ++num;
+        }
+        return num;
+    }
+    
+    
+    // Row highlight
+
+    function Highlight(e) {
+        var r = null;
+        if(e.parentNode && e.parentNode.parentNode) {
+            r = e.parentNode.parentNode;
+        } else if(e.parentElement && e.parentElement.parentElement) {
+            r = e.parentElement.parentElement;
+        }
+        if(r && r.className=="rowdata") {
+            r.className = "rowdatasel";
+        }
+    }
+
+    function UnHighlight(e) {
+        var r = null;
+        if(e.parentNode && e.parentNode.parentNode) {
+            r = e.parentNode.parentNode;
+        } else if (e.parentElement && e.parentElement.parentElement) {
+            r = e.parentElement.parentElement;
+        }
+        if(r && r.className=="rowdatasel") {
+            r.className = "rowdata";
+        }
+    }
+    
+    
+    // Copy / Move / Delete
+    
+    function Copy() {
+        if(NumChecked()==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        document.selform.do_action.value = "copy";
+        document.selform.submit();
+    }
+    
+    function Move() {
+        if(NumChecked()==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        document.selform.do_action.value = "move";
+        document.selform.submit();
+    }
+    
+    function Delete() {
+        num=NumChecked();
+        if(num==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        if(confirm("Are you sure you want to delete these "+num+" item(s)?")) {
+            document.selform.do_action.value = "delete";
+            document.selform.submit();
+        }
+    }
+    
+    function Archive() {
+        if(NumChecked()==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        document.selform.do_action.value = "arch";
+        document.selform.submit();
+    }
+    
+
+// -->
+</script>
+<BR><TABLE width="95%" class="toolbar"><TR><TD><TABLE><TR>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_up.png" ALT="UP" TITLE="UP">UP</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_home.png" ALT="HOME" TITLE="HOME">HOME</A></TD>
+<TD><A HREF="javascript:location.reload();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_refresh.png" ALT="RELOAD" TITLE="RELOAD">RELOAD</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=search&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_search.png" ALT="SEARCH" TITLE="SEARCH">SEARCH</A></TD>
+<TD class="splitter"></TD><TD><A HREF="javascript:Copy();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_copy.png" ALT="COPY" TITLE="COPY">COPY</A></TD>
+<TD><A HREF="javascript:Move();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_move.png" ALT="MOVE" TITLE="MOVE">MOVE</A></TD>
+<TD><A HREF="javascript:Delete();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_delete.png" ALT="DELETE" TITLE="DELETE">DELETE</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=upload&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_upload.png" ALT="UPLOAD" TITLE="UPLOAD">UPLOAD</A></TD>
+<!--<TD><A HREF="javascript:Archive();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_archive.png" ALT="ARCHIVE" TITLE="ARCHIVE">ARCHIVE</A></TD>-->
+<TD class="splitter"></TD><TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=logout&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_logout.png" ALT="LOGOUT" TITLE="LOGOUT">LOGOUT</A></TD>
+</TR></TABLE></TD>
+<TD align="right"><TABLE><FORM action="https://dafuq-manager.hackme.inndy.tw/index.php?action=mkitem&order=name&srt=yes&lang=en" method="post">
+<TR><TD><SELECT name="mktype"><option value="file">File</option><option value="dir">Directory</option></SELECT>
+<INPUT name="mkname" type="text" size="15"><INPUT type="submit" value="Create" class="button"></TD></TR></FORM></TABLE></TD>
+</TR></TABLE>
+<TABLE class="files" WIDTH="95%"><FORM name="selform" method="POST" action="https://dafuq-manager.hackme.inndy.tw/index.php?action=post&order=name&srt=yes&lang=en">
+<INPUT type="hidden" name="do_action"><INPUT type="hidden" name="first" value="y">
+<TR class="header"><TD WIDTH="2%" class="header">
+<INPUT TYPE="checkbox" name="toggleAllC" onclick="javascript:ToggleAll(this);"></TD>
+<TD WIDTH="44%" class="header"><B>
+<A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=no&lang=en">Name&nbsp;<IMG width="10" height="10" border="0" align="ABSMIDDLE" src="img/_arrowup.png" ALT="^"></A></B></TD>
+<TD WIDTH="10%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=size&srt=yes&lang=en">Size</A></B></TD>
+<TD WIDTH="16%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=type&srt=yes&lang=en">Type</A></B></TD>
+<TD WIDTH="14%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=mod&srt=yes&lang=en">Modified</A></B></TD><TD WIDTH="8%" class="header"><B>Perm's</B>
+</TD><TD WIDTH="6%" class="header"><B>Actions</B></TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="dafuqManager.7z" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/dafuqManager.7z" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/file.png" ALT="">&nbsp;dafuqManager.7z</A></TD>
+<TD>40.05 KB</TD>
+<TD>File</TD>
+<TD>2016/10/04 11:08</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=dafuqManager.7z&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_.png" ALT=""></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=dafuqManager.7z&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="index.html" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/index.html" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/html.png" ALT="">&nbsp;index.html</A></TD>
+<TD>170 Bytes</TD>
+<TD>HTML Page</TD>
+<TD>2016/10/03 14:51</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=index.html&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=index.html&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=index.html&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="see-me-if-you-need-tips.txt" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/see-me-if-you-need-tips.txt" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/txt.png" ALT="">&nbsp;see-me-if-you-need-tips.txt</A></TD>
+<TD>65 Bytes</TD>
+<TD>Text File</TD>
+<TD>2016/10/04 05:09</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="source-code-in-dafuqManager.7z-please-download-it.txt" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/source-code-in-dafuqManager.7z-please-download-it.txt" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/txt.png" ALT="">&nbsp;source-code-in-dafuqManager.7z-please-download-...</A></TD>
+<TD>-</TD>
+<TD>Text File</TD>
+<TD>2016/10/04 11:13</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="footer">
+<TD class="header"></TD><TD class="header">4 Item(s) (Free: 7.29 GB)</TD>
+<TD class="header">40.28 KB</TD>
+<TD class="header"></TD><TD class="header"></TD><TD class="header"></TD><TD class="header"></TD></FORM></TABLE>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    // Uncheck all items (to avoid problems with new items)
+    var ml = document.selform;
+    var len = ml.elements.length;
+    for(var i=0; i<len; ++i) {
+        var e = ml.elements[i];
+        if(e.name == "selitems[]" && e.checked == true) {
+            e.checked=false;
+        }
+    }
+// -->
+</script><hr>
+<small>Hope that you like this damn vulnerable dafuqManager :)</small>
+</center></body>
+</html>]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 23 15:06:56 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/index.php?action=list&order=name&srt=yes&lang=en]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /index.php?action=list&order=name&srt=yes&lang=en HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php?action=login&order=name&srt=yes
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=40hn96evkh8snmioicpf2sat42; show_hidden=no
+
+]]></request>
+    <status>200</status>
+    <responselength>13068</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 23 Nov 2018 07:06:57 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Fri, 23 Nov 2018 07:06:57 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 12724
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>dafuqManager :: Directory: /</title>
+    <link rel="stylesheet" href="style/style.css" media="all">
+</head>
+<body>
+<center>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td class="title"><div style="margin: .2em 2.5%;">[guest] - Directory: /</div></td>
+    </tr>
+  </tbody>
+</table>
+
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    // Checkboxes
+    function Toggle(e) {
+        if(e.checked) {
+            Highlight(e);
+            document.selform.toggleAllC.checked = AllChecked();
+        } else {
+            UnHighlight(e);
+            document.selform.toggleAllC.checked = false;
+        }
+       }
+
+    function ToggleAll(e) {
+        if(e.checked) CheckAll();
+        else ClearAll();
+    }
+    
+    function CheckAll() {
+        var ml = document.selform;
+        var len = ml.elements.length;
+        for(var i=0; i<len; ++i) {
+            var e = ml.elements[i];
+            if(e.name == "selitems[]") {
+                e.checked = true;
+                Highlight(e);
+            }
+        }
+        ml.toggleAllC.checked = true;
+    }
+
+    function ClearAll() {
+        var ml = document.selform;
+        var len = ml.elements.length;
+        for (var i=0; i<len; ++i) {
+            var e = ml.elements[i];
+            if(e.name == "selitems[]") {
+                e.checked = false;
+                UnHighlight(e);
+            }
+        }
+        ml.toggleAllC.checked = false;
+    }
+
+    function AllChecked() {
+        ml = document.selform;
+        len = ml.elements.length;
+        for(var i=0; i<len; ++i) {
+            if(ml.elements[i].name == "selitems[]" && !ml.elements[i].checked) return false;
+        }
+        return true;
+    }
+    
+    function NumChecked() {
+        ml = document.selform;
+        len = ml.elements.length;
+        num = 0;
+        for(var i=0; i<len; ++i) {
+            if(ml.elements[i].name == "selitems[]" && ml.elements[i].checked) ++num;
+        }
+        return num;
+    }
+    
+    
+    // Row highlight
+
+    function Highlight(e) {
+        var r = null;
+        if(e.parentNode && e.parentNode.parentNode) {
+            r = e.parentNode.parentNode;
+        } else if(e.parentElement && e.parentElement.parentElement) {
+            r = e.parentElement.parentElement;
+        }
+        if(r && r.className=="rowdata") {
+            r.className = "rowdatasel";
+        }
+    }
+
+    function UnHighlight(e) {
+        var r = null;
+        if(e.parentNode && e.parentNode.parentNode) {
+            r = e.parentNode.parentNode;
+        } else if (e.parentElement && e.parentElement.parentElement) {
+            r = e.parentElement.parentElement;
+        }
+        if(r && r.className=="rowdatasel") {
+            r.className = "rowdata";
+        }
+    }
+    
+    
+    // Copy / Move / Delete
+    
+    function Copy() {
+        if(NumChecked()==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        document.selform.do_action.value = "copy";
+        document.selform.submit();
+    }
+    
+    function Move() {
+        if(NumChecked()==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        document.selform.do_action.value = "move";
+        document.selform.submit();
+    }
+    
+    function Delete() {
+        num=NumChecked();
+        if(num==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        if(confirm("Are you sure you want to delete these "+num+" item(s)?")) {
+            document.selform.do_action.value = "delete";
+            document.selform.submit();
+        }
+    }
+    
+    function Archive() {
+        if(NumChecked()==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        document.selform.do_action.value = "arch";
+        document.selform.submit();
+    }
+    
+
+// -->
+</script>
+<BR><TABLE width="95%" class="toolbar"><TR><TD><TABLE><TR>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_up.png" ALT="UP" TITLE="UP">UP</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_home.png" ALT="HOME" TITLE="HOME">HOME</A></TD>
+<TD><A HREF="javascript:location.reload();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_refresh.png" ALT="RELOAD" TITLE="RELOAD">RELOAD</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=search&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_search.png" ALT="SEARCH" TITLE="SEARCH">SEARCH</A></TD>
+<TD class="splitter"></TD><TD><A HREF="javascript:Copy();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_copy.png" ALT="COPY" TITLE="COPY">COPY</A></TD>
+<TD><A HREF="javascript:Move();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_move.png" ALT="MOVE" TITLE="MOVE">MOVE</A></TD>
+<TD><A HREF="javascript:Delete();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_delete.png" ALT="DELETE" TITLE="DELETE">DELETE</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=upload&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_upload.png" ALT="UPLOAD" TITLE="UPLOAD">UPLOAD</A></TD>
+<!--<TD><A HREF="javascript:Archive();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_archive.png" ALT="ARCHIVE" TITLE="ARCHIVE">ARCHIVE</A></TD>-->
+<TD class="splitter"></TD><TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=logout&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_logout.png" ALT="LOGOUT" TITLE="LOGOUT">LOGOUT</A></TD>
+</TR></TABLE></TD>
+<TD align="right"><TABLE><FORM action="https://dafuq-manager.hackme.inndy.tw/index.php?action=mkitem&order=name&srt=yes&lang=en" method="post">
+<TR><TD><SELECT name="mktype"><option value="file">File</option><option value="dir">Directory</option></SELECT>
+<INPUT name="mkname" type="text" size="15"><INPUT type="submit" value="Create" class="button"></TD></TR></FORM></TABLE></TD>
+</TR></TABLE>
+<TABLE class="files" WIDTH="95%"><FORM name="selform" method="POST" action="https://dafuq-manager.hackme.inndy.tw/index.php?action=post&order=name&srt=yes&lang=en">
+<INPUT type="hidden" name="do_action"><INPUT type="hidden" name="first" value="y">
+<TR class="header"><TD WIDTH="2%" class="header">
+<INPUT TYPE="checkbox" name="toggleAllC" onclick="javascript:ToggleAll(this);"></TD>
+<TD WIDTH="44%" class="header"><B>
+<A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=no&lang=en">Name&nbsp;<IMG width="10" height="10" border="0" align="ABSMIDDLE" src="img/_arrowup.png" ALT="^"></A></B></TD>
+<TD WIDTH="10%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=size&srt=yes&lang=en">Size</A></B></TD>
+<TD WIDTH="16%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=type&srt=yes&lang=en">Type</A></B></TD>
+<TD WIDTH="14%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=mod&srt=yes&lang=en">Modified</A></B></TD><TD WIDTH="8%" class="header"><B>Perm's</B>
+</TD><TD WIDTH="6%" class="header"><B>Actions</B></TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="dafuqManager.7z" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/dafuqManager.7z" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/file.png" ALT="">&nbsp;dafuqManager.7z</A></TD>
+<TD>40.05 KB</TD>
+<TD>File</TD>
+<TD>2016/10/04 11:08</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=dafuqManager.7z&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_.png" ALT=""></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=dafuqManager.7z&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="index.html" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/index.html" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/html.png" ALT="">&nbsp;index.html</A></TD>
+<TD>170 Bytes</TD>
+<TD>HTML Page</TD>
+<TD>2016/10/03 14:51</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=index.html&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=index.html&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=index.html&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="see-me-if-you-need-tips.txt" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/see-me-if-you-need-tips.txt" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/txt.png" ALT="">&nbsp;see-me-if-you-need-tips.txt</A></TD>
+<TD>65 Bytes</TD>
+<TD>Text File</TD>
+<TD>2016/10/04 05:09</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="source-code-in-dafuqManager.7z-please-download-it.txt" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/source-code-in-dafuqManager.7z-please-download-it.txt" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/txt.png" ALT="">&nbsp;source-code-in-dafuqManager.7z-please-download-...</A></TD>
+<TD>-</TD>
+<TD>Text File</TD>
+<TD>2016/10/04 11:13</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="footer">
+<TD class="header"></TD><TD class="header">4 Item(s) (Free: 7.29 GB)</TD>
+<TD class="header">40.28 KB</TD>
+<TD class="header"></TD><TD class="header"></TD><TD class="header"></TD><TD class="header"></TD></FORM></TABLE>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    // Uncheck all items (to avoid problems with new items)
+    var ml = document.selform;
+    var len = ml.elements.length;
+    for(var i=0; i<len; ++i) {
+        var e = ml.elements[i];
+        if(e.name == "selitems[]" && e.checked == true) {
+            e.checked=false;
+        }
+    }
+// -->
+</script><hr>
+<small>Hope that you like this damn vulnerable dafuqManager :)</small>
+</center></body>
+</html>]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 23 15:07:15 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/index.php?action=list&order=name&srt=yes&lang=en]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /index.php?action=list&order=name&srt=yes&lang=en HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=40hn96evkh8snmioicpf2sat42; show_hidden=yes
+If-Modified-Since: Fri, 23 Nov 2018 07:06:57 GMT
+
+]]></request>
+    <status>200</status>
+    <responselength>15524</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 23 Nov 2018 07:07:22 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Fri, 23 Nov 2018 07:07:22 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 15180
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>dafuqManager :: Directory: /</title>
+    <link rel="stylesheet" href="style/style.css" media="all">
+</head>
+<body>
+<center>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td class="title"><div style="margin: .2em 2.5%;">[guest] - Directory: /</div></td>
+    </tr>
+  </tbody>
+</table>
+
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    // Checkboxes
+    function Toggle(e) {
+        if(e.checked) {
+            Highlight(e);
+            document.selform.toggleAllC.checked = AllChecked();
+        } else {
+            UnHighlight(e);
+            document.selform.toggleAllC.checked = false;
+        }
+       }
+
+    function ToggleAll(e) {
+        if(e.checked) CheckAll();
+        else ClearAll();
+    }
+    
+    function CheckAll() {
+        var ml = document.selform;
+        var len = ml.elements.length;
+        for(var i=0; i<len; ++i) {
+            var e = ml.elements[i];
+            if(e.name == "selitems[]") {
+                e.checked = true;
+                Highlight(e);
+            }
+        }
+        ml.toggleAllC.checked = true;
+    }
+
+    function ClearAll() {
+        var ml = document.selform;
+        var len = ml.elements.length;
+        for (var i=0; i<len; ++i) {
+            var e = ml.elements[i];
+            if(e.name == "selitems[]") {
+                e.checked = false;
+                UnHighlight(e);
+            }
+        }
+        ml.toggleAllC.checked = false;
+    }
+
+    function AllChecked() {
+        ml = document.selform;
+        len = ml.elements.length;
+        for(var i=0; i<len; ++i) {
+            if(ml.elements[i].name == "selitems[]" && !ml.elements[i].checked) return false;
+        }
+        return true;
+    }
+    
+    function NumChecked() {
+        ml = document.selform;
+        len = ml.elements.length;
+        num = 0;
+        for(var i=0; i<len; ++i) {
+            if(ml.elements[i].name == "selitems[]" && ml.elements[i].checked) ++num;
+        }
+        return num;
+    }
+    
+    
+    // Row highlight
+
+    function Highlight(e) {
+        var r = null;
+        if(e.parentNode && e.parentNode.parentNode) {
+            r = e.parentNode.parentNode;
+        } else if(e.parentElement && e.parentElement.parentElement) {
+            r = e.parentElement.parentElement;
+        }
+        if(r && r.className=="rowdata") {
+            r.className = "rowdatasel";
+        }
+    }
+
+    function UnHighlight(e) {
+        var r = null;
+        if(e.parentNode && e.parentNode.parentNode) {
+            r = e.parentNode.parentNode;
+        } else if (e.parentElement && e.parentElement.parentElement) {
+            r = e.parentElement.parentElement;
+        }
+        if(r && r.className=="rowdatasel") {
+            r.className = "rowdata";
+        }
+    }
+    
+    
+    // Copy / Move / Delete
+    
+    function Copy() {
+        if(NumChecked()==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        document.selform.do_action.value = "copy";
+        document.selform.submit();
+    }
+    
+    function Move() {
+        if(NumChecked()==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        document.selform.do_action.value = "move";
+        document.selform.submit();
+    }
+    
+    function Delete() {
+        num=NumChecked();
+        if(num==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        if(confirm("Are you sure you want to delete these "+num+" item(s)?")) {
+            document.selform.do_action.value = "delete";
+            document.selform.submit();
+        }
+    }
+    
+    function Archive() {
+        if(NumChecked()==0) {
+            alert("You haven't selected any item(s).");
+            return;
+        }
+        document.selform.do_action.value = "arch";
+        document.selform.submit();
+    }
+    
+
+// -->
+</script>
+<BR><TABLE width="95%" class="toolbar"><TR><TD><TABLE><TR>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_up.png" ALT="UP" TITLE="UP">UP</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_home.png" ALT="HOME" TITLE="HOME">HOME</A></TD>
+<TD><A HREF="javascript:location.reload();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_refresh.png" ALT="RELOAD" TITLE="RELOAD">RELOAD</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=search&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_search.png" ALT="SEARCH" TITLE="SEARCH">SEARCH</A></TD>
+<TD class="splitter"></TD><TD><A HREF="javascript:Copy();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_copy.png" ALT="COPY" TITLE="COPY">COPY</A></TD>
+<TD><A HREF="javascript:Move();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_move.png" ALT="MOVE" TITLE="MOVE">MOVE</A></TD>
+<TD><A HREF="javascript:Delete();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_delete.png" ALT="DELETE" TITLE="DELETE">DELETE</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=upload&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_upload.png" ALT="UPLOAD" TITLE="UPLOAD">UPLOAD</A></TD>
+<!--<TD><A HREF="javascript:Archive();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_archive.png" ALT="ARCHIVE" TITLE="ARCHIVE">ARCHIVE</A></TD>-->
+<TD class="splitter"></TD><TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=logout&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_logout.png" ALT="LOGOUT" TITLE="LOGOUT">LOGOUT</A></TD>
+</TR></TABLE></TD>
+<TD align="right"><TABLE><FORM action="https://dafuq-manager.hackme.inndy.tw/index.php?action=mkitem&order=name&srt=yes&lang=en" method="post">
+<TR><TD><SELECT name="mktype"><option value="file">File</option><option value="dir">Directory</option></SELECT>
+<INPUT name="mkname" type="text" size="15"><INPUT type="submit" value="Create" class="button"></TD></TR></FORM></TABLE></TD>
+</TR></TABLE>
+<TABLE class="files" WIDTH="95%"><FORM name="selform" method="POST" action="https://dafuq-manager.hackme.inndy.tw/index.php?action=post&order=name&srt=yes&lang=en">
+<INPUT type="hidden" name="do_action"><INPUT type="hidden" name="first" value="y">
+<TR class="header"><TD WIDTH="2%" class="header">
+<INPUT TYPE="checkbox" name="toggleAllC" onclick="javascript:ToggleAll(this);"></TD>
+<TD WIDTH="44%" class="header"><B>
+<A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=no&lang=en">Name&nbsp;<IMG width="10" height="10" border="0" align="ABSMIDDLE" src="img/_arrowup.png" ALT="^"></A></B></TD>
+<TD WIDTH="10%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=size&srt=yes&lang=en">Size</A></B></TD>
+<TD WIDTH="16%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=type&srt=yes&lang=en">Type</A></B></TD>
+<TD WIDTH="14%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=mod&srt=yes&lang=en">Modified</A></B></TD><TD WIDTH="8%" class="header"><B>Perm's</B>
+</TD><TD WIDTH="6%" class="header"><B>Actions</B></TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value=".good.job.here.is.your.hidden.flag-1.txt" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/.good.job.here.is.your.hidden.flag-1.txt" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/txt.png" ALT="">&nbsp;.good.job.here.is.your.hidden.flag-1.txt</A></TD>
+<TD>47 Bytes</TD>
+<TD>Text File</TD>
+<TD>2016/10/04 04:48</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=.good.job.here.is.your.hidden.flag-1.txt&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=.good.job.here.is.your.hidden.flag-1.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=.good.job.here.is.your.hidden.flag-1.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value=".where-is-flag-2-please-tell-me.txt" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/.where-is-flag-2-please-tell-me.txt" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/txt.png" ALT="">&nbsp;.where-is-flag-2-please-tell-me.txt</A></TD>
+<TD>46 Bytes</TD>
+<TD>Text File</TD>
+<TD>2016/10/04 05:13</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=.where-is-flag-2-please-tell-me.txt&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=.where-is-flag-2-please-tell-me.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=.where-is-flag-2-please-tell-me.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="dafuqManager.7z" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/dafuqManager.7z" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/file.png" ALT="">&nbsp;dafuqManager.7z</A></TD>
+<TD>40.05 KB</TD>
+<TD>File</TD>
+<TD>2016/10/04 11:08</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=dafuqManager.7z&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_.png" ALT=""></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=dafuqManager.7z&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="index.html" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/index.html" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/html.png" ALT="">&nbsp;index.html</A></TD>
+<TD>170 Bytes</TD>
+<TD>HTML Page</TD>
+<TD>2016/10/03 14:51</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=index.html&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=index.html&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=index.html&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="see-me-if-you-need-tips.txt" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/see-me-if-you-need-tips.txt" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/txt.png" ALT="">&nbsp;see-me-if-you-need-tips.txt</A></TD>
+<TD>65 Bytes</TD>
+<TD>Text File</TD>
+<TD>2016/10/04 05:09</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="source-code-in-dafuqManager.7z-please-download-it.txt" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/source-code-in-dafuqManager.7z-please-download-it.txt" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/txt.png" ALT="">&nbsp;source-code-in-dafuqManager.7z-please-download-...</A></TD>
+<TD>-</TD>
+<TD>Text File</TD>
+<TD>2016/10/04 11:13</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=en" TITLE="CHANGE PERMISSIONS">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="EDIT" TITLE="EDIT"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=en"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="DOWNLOAD" TITLE="DOWNLOAD"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="footer">
+<TD class="header"></TD><TD class="header">6 Item(s) (Free: 7.29 GB)</TD>
+<TD class="header">40.37 KB</TD>
+<TD class="header"></TD><TD class="header"></TD><TD class="header"></TD><TD class="header"></TD></FORM></TABLE>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    // Uncheck all items (to avoid problems with new items)
+    var ml = document.selform;
+    var len = ml.elements.length;
+    for(var i=0; i<len; ++i) {
+        var e = ml.elements[i];
+        if(e.name == "selitems[]" && e.checked == true) {
+            e.checked=false;
+        }
+    }
+// -->
+</script><hr>
+<small>Hope that you like this damn vulnerable dafuqManager :)</small>
+</center></body>
+</html>]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 23 15:07:40 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/data/guest/.good.job.here.is.your.hidden.flag-1.txt]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/data/guest/.good.job.here.is.your.hidden.flag-1.txt]]></path>
+    <extension>txt</extension>
+    <request base64="false"><![CDATA[GET /data/guest/.good.job.here.is.your.hidden.flag-1.txt HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=40hn96evkh8snmioicpf2sat42; show_hidden=no
+
+]]></request>
+    <status>200</status>
+    <responselength>317</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 23 Nov 2018 07:07:40 GMT
+Content-Type: text/plain
+Content-Length: 47
+Connection: close
+Last-Modified: Tue, 04 Oct 2016 04:48:02 GMT
+ETag: "57f33482-2f"
+Accept-Ranges: bytes
+Strict-Transport-Security: max-age=15768000
+
+FLAG{Wow, how did you found me? I was hidden!}
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 23 15:07:42 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/data/guest/.where-is-flag-2-please-tell-me.txt]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/data/guest/.where-is-flag-2-please-tell-me.txt]]></path>
+    <extension>txt</extension>
+    <request base64="false"><![CDATA[GET /data/guest/.where-is-flag-2-please-tell-me.txt HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=40hn96evkh8snmioicpf2sat42; show_hidden=no
+
+]]></request>
+    <status>200</status>
+    <responselength>316</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 23 Nov 2018 07:07:42 GMT
+Content-Type: text/plain
+Content-Length: 46
+Connection: close
+Last-Modified: Tue, 04 Oct 2016 05:13:15 GMT
+ETag: "57f33a6b-2e"
+Accept-Ranges: bytes
+Strict-Transport-Security: max-age=15768000
+
+Try to login as admin! and you will get flag2
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 23 15:07:44 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/data/guest/index.html]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/data/guest/index.html]]></path>
+    <extension>html</extension>
+    <request base64="false"><![CDATA[GET /data/guest/index.html HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=40hn96evkh8snmioicpf2sat42; show_hidden=no
+
+]]></request>
+    <status>200</status>
+    <responselength>420</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 23 Nov 2018 07:07:44 GMT
+Content-Type: text/html
+Connection: close
+Last-Modified: Mon, 03 Oct 2016 14:51:37 GMT
+ETag: W/"57f27079-aa"
+Strict-Transport-Security: max-age=15768000
+Content-Length: 170
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1>Hello, World</h1>
+  <hr>
+
+  <h3>Guest's Room</h3>
+</body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 23 15:07:44 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/data/guest/see-me-if-you-need-tips.txt]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/data/guest/see-me-if-you-need-tips.txt]]></path>
+    <extension>txt</extension>
+    <request base64="false"><![CDATA[GET /data/guest/see-me-if-you-need-tips.txt HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=40hn96evkh8snmioicpf2sat42; show_hidden=no
+
+]]></request>
+    <status>200</status>
+    <responselength>335</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 23 Nov 2018 07:07:45 GMT
+Content-Type: text/plain
+Content-Length: 65
+Connection: close
+Last-Modified: Tue, 04 Oct 2016 05:09:04 GMT
+ETag: "57f33970-41"
+Accept-Ranges: bytes
+Strict-Transport-Security: max-age=15768000
+
+Do you know cookie? Create a cookie named `help` with value `me`!]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 23 15:07:45 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/data/guest/source-code-in-dafuqManager.7z-please-download-it.txt]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/data/guest/source-code-in-dafuqManager.7z-please-download-it.txt]]></path>
+    <extension>txt</extension>
+    <request base64="false"><![CDATA[GET /data/guest/source-code-in-dafuqManager.7z-please-download-it.txt HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=en
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=40hn96evkh8snmioicpf2sat42; show_hidden=no
+
+]]></request>
+    <status>200</status>
+    <responselength>268</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 23 Nov 2018 07:07:46 GMT
+Content-Type: text/plain
+Content-Length: 0
+Connection: close
+Last-Modified: Tue, 04 Oct 2016 11:13:34 GMT
+ETag: "57f38ede-0"
+Accept-Ranges: bytes
+Strict-Transport-Security: max-age=15768000
+
+]]></response>
+    <comment></comment>
+  </item>
+</items>
