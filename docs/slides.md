@@ -2,7 +2,7 @@
 # [Hackme CTF](https://hackme.inndy.tw/)
 ### 就上手
 
-jason3e7 20181204
+jason3e7 20181209
 
 Note:title:"第一次解Hackme CTF就上手"
 
@@ -14,6 +14,7 @@ Note:title:"第一次解Hackme CTF就上手"
 * [dafuq-manager 3](#/10)
 * [xssme](#/22)
 * [xssrf leak](#/32)
+* [wordpress 1](#/39)
 
 ---
 
@@ -553,6 +554,77 @@ xhttp.send("url=file:///var/www/html/config.php");
 * [Back to Web](#/1)
 
 Note:路徑猜測是 ubuntu 預設路徑
+
+---
+
+## wordpress 1 hint
+* 目標 : Something strange is hidding in the source code, find it.
+* 切入點
+  * 就是到處看看, 要有耐心和細心
+* 步驟
+  * [step1, website, 找出目標](#/41)
+  * [step2, source code, 找出目標](#/42)
+  * [step3, bypass, 分析和建構語法](#/43)
+
+---
+
+## wordpress 1 visible
+* [index](https://wp.hackme.inndy.tw) HTML
+  * javascript, window._wpemojiSettings
+* [login](https://wp.hackme.inndy.tw/wp-login.php)
+* [feed](https://wp.hackme.inndy.tw/feed)
+* [comments](https://wp.hackme.inndy.tw/comments/feed)
+* [wp-json](https://wp.hackme.inndy.tw/wp-json/)
+* [wlwmanifest.xml](https://wp.hackme.inndy.tw/wp-includes/wlwmanifest.xml)
+
+Note:
+* 還有一些 wordpress 預設可能會安裝的東西和路徑沒試
+* 還有一些網站預設的也要測試. ex:robots.txt
+
+---
+
+## wordpress 1 page
+* [sample-page](https://wp.hackme.inndy.tw/sample-page)
+* [Backup File](https://wp.hackme.inndy.tw/archives/96)
+  * [dropbox](https://www.dropbox.com/s/r5fk52thwh79kzw/web-security-course-game2.7z?dl=0)
+* [受保護的文章：FLAG2](https://wp.hackme.inndy.tw/archives/78)
+* 有很多的下載
+  * [CimiCimi小女僕機器人 Source Code](https://wp.hackme.inndy.tw/archives/16)
+    * [Download](http://www.mediafire.com/download/tsf8dfs83whqr4x/cimicimi_source.7z) 
+* [Back to wordpress 1 hint](#/39)
+
+Note:
+* [新楓之谷免開網頁登入器](https://wp.hackme.inndy.tw/archives/7)
+  * [NewBeanfunLogin.7z](https://docs.google.com/file/d/0BwCCAN51pvN5RzNkNWxua2kwWlU/edit)
+* [CimiCimi小女僕機器人 Source Code](https://wp.hackme.inndy.tw/archives/16)
+  * [Download](http://www.mediafire.com/download/tsf8dfs83whqr4x/cimicimi_source.7z)
+* [MS Speed Pick — 楓之谷撿物加速程式](https://wp.hackme.inndy.tw/archives/50)
+  * [MS_SpeedPick.7z](https://sites.google.com/site/isblogspot/attach/MS_SpeedPick.7z?attredirects=0&d=1)
+
+---
+
+## wordpress 1 backup
+* source code review
+  * login
+  * database
+  * php function bypass
+  * keyword : flag
+    * core
+* [Back to wordpress 1 hint](#/39)
+
+---
+
+## wordpress 1 core
+* md5() = 5ada11fd9c69c78ea65c832dd7f9bbde
+  * rainbow table
+* wp_get_user_ip()
+  * wp-includes/functions.php
+    * $_SERVER['REMOTE_ADDR']
+* mcrypt_decrypt()
+  * AUTH_KEY, AUTH_SALT, from !?
+* [Back to Web](#/1)
+  
+Note:有可能遠端自己解嗎?
 
 ---
 
