@@ -2,7 +2,7 @@
 # [Hackme CTF](https://hackme.inndy.tw/)
 ### 就上手
 
-jason3e7 20181209
+jason3e7 20181210
 
 Note:title:"第一次解Hackme CTF就上手"
 
@@ -15,6 +15,7 @@ Note:title:"第一次解Hackme CTF就上手"
 * [xssme](#/22)
 * [xssrf leak](#/32)
 * [wordpress 1](#/39)
+* [wordpress 2](#/44)
 
 ---
 
@@ -627,5 +628,44 @@ Note:
 Note:有可能遠端自己解嗎?
 
 ---
+
+## wordpress 2 hint
+* 目標 : Something strange is hidding in the source code, find it.
+* 切入點
+  * from wordpress 1, theme
+* 步驟
+  * [step1, source code, 找出目標](#/45)
+  * [step2, website, 找出目標](#/47)
+
+---
+
+## wordpress 2 theme
+* keyword
+  * parameter 
+    * GET
+    * POST
+    * REQUEST
+  * php function
+    * eval()
+    * ...
+
+Note:search 'GET[' at theme folder 
+
+---
+
+## wordpress 2 content-search
+* `$wp_query->post->{'post_'.(string)($_GET['debug']?:'type')}`
+* [Class Reference/WP Post](https://codex.wordpress.org/Class_Reference/WP_Post)
+* [Back to wordpress 2 hint](#/44)
+
+---
+
+## wordpress 2 page
+* 參考 wordpress 1, 要有耐心和細心
+* [受保護的文章：FLAG2](https://wp.hackme.inndy.tw/archives/78)
+* [Back to Web](#/1)
+
+---
+
 
 # The End
