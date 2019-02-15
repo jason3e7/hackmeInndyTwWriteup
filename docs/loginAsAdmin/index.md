@@ -2,7 +2,7 @@
 # login as admin
 ### 就上手
 
-jason3e7 20190101
+jason3e7 20190215
 
 Note:title:"第一次解 login as admin 就上手"
 
@@ -11,6 +11,7 @@ Note:title:"第一次解 login as admin 就上手"
 # Web
 * [login as admin 0](#/2)
 * [login as admin 0.1](#/5)
+* [login as admin 3](#/8)
 
 ---
 
@@ -82,6 +83,16 @@ select column_name from information_schema.columns where table_schema="schema_na
 select concat(column_name) from schema_name.table_name limit 0,1
 ```
 * [Back to Web](#/1)
+
+---
+
+## login as admin 3 hint
+* 目標 : 登入 admin 權限
+* 分析權限管控機制(cookie)
+* 切入點
+  * function load_user()
+  * == vs. ===
+  * [PHP Magic Tricks: Type Juggling](https://www.owasp.org/images/6/6b/PHPMagicTricks-TypeJuggling.pdf)
 
 ---
 
