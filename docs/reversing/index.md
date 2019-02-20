@@ -10,6 +10,7 @@ Note:title:"第一次解 Reversing 就上手"
 
 # Reversing
 * [helloworld](#/2)
+* [simple](#/3)
 
 Note:
 * IDA pro, F5 大絕招
@@ -19,6 +20,14 @@ Note:
 ---
 
 ## helloworld hint
+* 目標 : 取得 flag
+* IDA pro, F5 大絕招
+
+Note:ELF 32-bit LSB executable
+
+---
+
+## simple hint
 * 目標 : 取得 flag
 * IDA pro, F5 大絕招
 
