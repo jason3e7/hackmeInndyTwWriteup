@@ -2,19 +2,35 @@
 # Misc
 ### 就上手
 
-jason3e7 20190227
+jason3e7 20190306
 
 Note:title:"第一次解 Misc 就上手"
 
 ---
 
 ### Misc
+* [otaku](#/2)
 ### Programming
 ### Lucky
-* [you-guess](#/2)
+* [you-guess](#/3)
 ### Forensic
-* [easy pdf](#/3)
-* [this is a pen](#/4)
+* [easy pdf](#/4)
+* [this is a pen](#/5)
+
+---
+
+## otaku hint
+* 目標 : steganography, image
+* strings
+* binwalk
+* stegsolve
+
+Note:
+* [wikipedia](https://zh.wikipedia.org/wiki/File:Miku_Hatsune.png)
+* [Miku_Hatsune.png](https://web.archive.org/web/20151106000405/https://upload.wikimedia.org/wikipedia/zh/0/00/Miku_Hatsune.png)
+* [compare(imagemagick)](https://imagemagick.org/script/compare.php), kali default
+  * compare -compose src file1.png file2.png diff.png
+* [A Challengers Handbook](http://www.caesum.com/handbook/stego.htm)
 
 ---
 
