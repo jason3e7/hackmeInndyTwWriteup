@@ -8,14 +8,134 @@ Note:title:"第一次解 Misc 就上手"
 
 ---
 
-### Misc
-* [otaku](#/2)
+## Misc
+* [flag](#/3)
+* [corgi can fly](#/4)
+* [television](#/5)
+* [meow](#/6)
+* [where is flag](#/7)
+* [encoder](#/8)
+* [slow](#/9)
+* [pusheen.txt](#/10)
+* [big](#/11)
+* [otaku](#/12)
+* [buzzing](#/13)
+
+---
+
 ### Programming
+* [fast](#/14)
 ### Lucky
-* [you-guess](#/3)
+* [you-guess](#/15)
 ### Forensic
-* [easy pdf](#/4)
-* [this is a pen](#/5)
+* [easy pdf](#/16)
+* [this is a pen](#/17)
+
+---
+
+## flag hint
+* 目標 : What do you see !?
+
+---
+
+## corgi can fly hint
+* 目標 : steganography, image
+* file hex editor Or strings
+* base64 
+* LSB(Least Significant Bit)
+* stegsolve
+* qrcode 
+
+Note:
+* 原本是自己寫程式解的
+  * question !?
+    * Where is LSB ? RGB or RGBA ? 
+    * Output is file or picture !?
+  * RGB and picture !
+
+---
+
+## television hint
+* 目標 : steganography, image
+* view file as binary
+* view file as hex
+* strings
+
+Note:
+* 原本是自己寫程式解的
+
+---
+
+## meow hint
+* 目標 : image, zip
+* file format
+* [10173502_279586372215628_1950740854_n.png](https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xat1/t39.1997-6/p296x100/10173502_279586372215628_1950740854_n.png), 已經失效
+* binwalk
+* pkcrack
+
+Note:
+* remove png save zip
+  * use HxD 
+  * find png file format end 
+  * delete all png and save
+* foremost -t all -i file -o outputDir
+* pkcrack
+  * install
+    * wget https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack/pkcrack-1.2.2.tar.gz
+    * tar xzf pkcrack-1.2.2.tar.gz
+    * cd pkcrack-1.2.2/src
+    * make
+    * (option)
+    * mkdir -p ../../bin
+    * cp extract findkey makekey pkcrack zipdecrypt ../../bin
+    * cd ../../
+  * usage
+    * pkcrack -C [crypted_file] -c [mapping file path] -P [plaintext_file] -p [mapping file path] -d [output] -a
+    * suggest -c and -p is same path
+    * zip -r plain.zip meow
+
+---
+
+## where is flag hint
+* 目標 : find flag
+* regular expression
+
+Note:
+* `FLAG\{\w+\}`
+
+---
+
+## encoder hint
+* 目標 : decode
+* know encoder.py
+* write decoder.py
+
+---
+
+## slow hint
+* 目標 : 
+
+---
+
+## pusheen.txt hint
+* 目標 : decode
+* color to binary
+* binary to ascii
+
+---
+
+## big hint
+* 目標 : decompress
+* Need more than 20G space
+* hex viewer
+  * [xz-file-format-1.0.4](https://tukaani.org/xz/xz-file-format-1.0.4.txt)
+    * Header Magic Bytes, FD 37 7A 58 5A 00
+* command
+  * file
+  * strings
+  * unxz
+  * head
+  * tail
 
 ---
 
@@ -31,6 +151,16 @@ Note:
 * [compare(imagemagick)](https://imagemagick.org/script/compare.php), kali default
   * compare -compose src file1.png file2.png diff.png
 * [A Challengers Handbook](http://www.caesum.com/handbook/stego.htm)
+
+---
+
+## buzzing hint
+* 目標 : steganography, image
+
+---
+
+## fast hint
+* 目標 : 
 
 ---
 
