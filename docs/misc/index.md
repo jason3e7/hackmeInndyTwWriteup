@@ -2,7 +2,7 @@
 # Misc
 ### 就上手
 
-jason3e7 20190306
+jason3e7 20190307
 
 Note:title:"第一次解 Misc 就上手"
 
@@ -113,7 +113,12 @@ Note:
 ---
 
 ## slow hint
-* 目標 : 
+* 目標 : brute force
+* Side Channel Attack
+  * timing attack
+
+Note:
+* [Python 多執行緒 threading 模組平行化程式設計教學](https://blog.gtwang.org/programming/python-threading-multithreaded-programming-tutorial/)
 
 ---
 
