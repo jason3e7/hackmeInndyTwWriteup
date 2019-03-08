@@ -2,7 +2,7 @@
 # Misc
 ### 就上手
 
-jason3e7 20190307
+jason3e7 20190308
 
 Note:title:"第一次解 Misc 就上手"
 
@@ -171,7 +171,7 @@ DIB : width in pixels * height in pixels * bits per pixel = image size
 ---
 
 ## fast hint
-* 目標 : 
+* 目標 : Professionally ProgramCoder
 
 ---
 
