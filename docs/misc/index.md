@@ -161,6 +161,12 @@ Note:
 
 ## buzzing hint
 * 目標 : steganography, image
+* file format(magic number)
+* format header
+* size
+
+Note:
+DIB : width in pixels * height in pixels * bits per pixel = image size
 
 ---
 
