@@ -2,34 +2,38 @@
 # Misc
 ### 就上手
 
-jason3e7 20190308
+jason3e7 20190422
 
 Note:title:"第一次解 Misc 就上手"
 
 ---
 
-## Misc
-* [flag](#/3)
-* [corgi can fly](#/4)
-* [television](#/5)
-* [meow](#/6)
-* [where is flag](#/7)
-* [encoder](#/8)
-* [slow](#/9)
-* [pusheen.txt](#/10)
-* [big](#/11)
-* [otaku](#/12)
-* [buzzing](#/13)
+## Misc part1
+* [flag](#/4)
+* [corgi can fly](#/5)
+* [television](#/6)
+* [meow](#/7)
+* [where is flag](#/8)
+* [encoder](#/9)
+
+---
+
+## Misc part2
+* [pusheen.txt](#/11)
+* [big](#/12)
+* [otaku](#/13)
+* [buzzing](#/14)
+* [drvtry vpfr](#/15)
 
 ---
 
 ### Programming
-* [fast](#/14)
+* [fast](#/16)
 ### Lucky
-* [you-guess](#/15)
+* [you-guess](#/17)
 ### Forensic
-* [easy pdf](#/16)
-* [this is a pen](#/17)
+* [easy pdf](#/18)
+* [this is a pen](#/19)
 
 ---
 
@@ -167,6 +171,16 @@ Note:
 
 Note:
 DIB : width in pixels * height in pixels * bits per pixel = image size
+
+---
+
+## drvtry vpfr hint
+* 目標 : find encode
+* google
+
+Note:
+* why google detect "secret code".
+* drvtry vpfr -> secret code.
 
 ---
 
