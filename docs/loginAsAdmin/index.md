@@ -2,7 +2,7 @@
 # login as admin
 ### 就上手
 
-jason3e7 20190215
+jason3e7 20190422
 
 Note:title:"第一次解 login as admin 就上手"
 
@@ -12,6 +12,7 @@ Note:title:"第一次解 login as admin 就上手"
 * [login as admin 0](#/2)
 * [login as admin 0.1](#/5)
 * [login as admin 3](#/8)
+* [login as admin 8](#/9)
 
 ---
 
@@ -93,6 +94,20 @@ select concat(column_name) from schema_name.table_name limit 0,1
   * function load_user()
   * == vs. ===
   * [PHP Magic Tricks: Type Juggling](https://www.owasp.org/images/6/6b/PHPMagicTricks-TypeJuggling.pdf)
+* [Back to Web](#/1)
+
+---
+
+## login as admin 8 hint
+* 目標 : 登入 admin 權限
+* 分析權限管控機制(cookie and session)
+* 切入點
+  * $session->is_admin
+  * 沒有source code, 黑箱測試
+  * cookie分析
+
+Note:
+* [SHA512](https://emn178.github.io/online-tools/sha512.html)  
 
 ---
 
