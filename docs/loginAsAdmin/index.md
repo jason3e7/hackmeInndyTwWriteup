@@ -13,6 +13,7 @@ Note:title:"第一次解 login as admin 就上手"
 * [login as admin 0.1](#/5)
 * [login as admin 3](#/8)
 * [login as admin 8](#/9)
+* [login as admin 8.1](#/10)
 
 ---
 
@@ -105,9 +106,19 @@ select concat(column_name) from schema_name.table_name limit 0,1
   * $session->is_admin
   * 沒有source code, 黑箱測試
   * cookie分析
+* [Back to Web](#/1)
 
 Note:
-* [SHA512](https://emn178.github.io/online-tools/sha512.html)  
+* [SHA512](https://emn178.github.io/online-tools/sha512.html)
+* [PHP Object Injection](https://www.owasp.org/index.php/PHP_Object_Injection)  
+
+---
+
+## login as admin 8.1 hint
+* 目標 : 找出隱藏的 flag
+* 切入點
+  * debug
+* [Back to Web](#/1)
 
 ---
 
