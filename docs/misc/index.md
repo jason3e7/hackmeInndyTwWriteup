@@ -2,7 +2,7 @@
 # Misc
 ### 就上手
 
-jason3e7 20190422
+jason3e7 20190425
 
 Note:title:"第一次解 Misc 就上手"
 
@@ -24,16 +24,17 @@ Note:title:"第一次解 Misc 就上手"
 * [otaku](#/13)
 * [buzzing](#/14)
 * [drvtry vpfr](#/15)
+* [BZBZ](#/16)
 
 ---
 
 ### Programming
-* [fast](#/16)
+* [fast](#/17)
 ### Lucky
-* [you-guess](#/17)
+* [you-guess](#/18)
 ### Forensic
-* [easy pdf](#/18)
-* [this is a pen](#/19)
+* [easy pdf](#/19)
+* [this is a pen](#/20)
 
 ---
 
@@ -181,6 +182,17 @@ DIB : width in pixels * height in pixels * bits per pixel = image size
 Note:
 * why google detect "secret code".
 * drvtry vpfr -> secret code.
+
+---
+
+## BZBZ hint
+* 目標 : find hardcode password
+* google, find backup source very important
+* linux, find, grep
+* keyword !?
+
+Note:
+* `find ./ -type f -exec grep -Hn 'password = "' {} \;`
 
 ---
 
