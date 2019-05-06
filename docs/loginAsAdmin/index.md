@@ -2,7 +2,7 @@
 # login as admin
 ### 就上手
 
-jason3e7 20190422
+jason3e7 20190506
 
 Note:title:"第一次解 login as admin 就上手"
 
@@ -11,9 +11,10 @@ Note:title:"第一次解 login as admin 就上手"
 # Web
 * [login as admin 0](#/2)
 * [login as admin 0.1](#/5)
-* [login as admin 3](#/8)
-* [login as admin 8](#/9)
-* [login as admin 8.1](#/10)
+* [login as admin 1](#/8)
+* [login as admin 3](#/11)
+* [login as admin 8](#/12)
+* [login as admin 8.1](#/13)
 
 ---
 
@@ -85,6 +86,48 @@ select column_name from information_schema.columns where table_schema="schema_na
 select concat(column_name) from schema_name.table_name limit 0,1
 ```
 * [Back to Web](#/1)
+
+---
+
+## login as admin 1 hint
+* 目標 : 登入 admin 權限
+* 分析權限管控機制
+* 切入點
+  * trace code, 反向去看
+  * SQLi
+
+Note:
+* [SQL Logic Operator Precedence: And and Or](https://stackoverflow.com/questions/1241142/sql-logic-operator-precedence-and-and-or)
+
+---
+
+## login as admin 1 trace code
+```
+<?php if($user->isadmin) printf("<code>%s</code>, %s", htmlentities($flag1), $where_is_flag2); ?>
+$user = $query->fetchObject();
+$query = $db->query($sql);
+$sql = sprintf("SELECT * FROM `%s` WHERE `name` = '%s' AND `password` = '%s'",
+        USER_TABLE,
+        $_POST['name'],
+        $_POST['password']
+    );
+```
+
+Note:
+參考admin 0, 需要一點巧思, 看 table schema
+
+---
+
+## login as admin 1 safe_filter
+```
+strstr, " " || "1=1" || "''" || "union select" || "select "
+str_replace("'", "\\'", $str)
+```
+* [Back to Web](#/1)
+
+Note:
+參考admin 0, 簡單的 filter, 需要一點巧思()
+* [SQL injection with no spaces](https://stackoverflow.com/questions/49682143/sql-injection-with-no-spaces)
 
 ---
 
