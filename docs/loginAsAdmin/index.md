@@ -2,7 +2,7 @@
 # login as admin
 ### 就上手
 
-jason3e7 20190506
+jason3e7 20190519
 
 Note:title:"第一次解 login as admin 就上手"
 
@@ -12,9 +12,10 @@ Note:title:"第一次解 login as admin 就上手"
 * [login as admin 0](#/2)
 * [login as admin 0.1](#/5)
 * [login as admin 1](#/8)
-* [login as admin 3](#/11)
-* [login as admin 8](#/12)
-* [login as admin 8.1](#/13)
+* [login as admin 1.2](#/11)
+* [login as admin 3](#/14)
+* [login as admin 8](#/15)
+* [login as admin 8.1](#/16)
 
 ---
 
@@ -128,6 +129,44 @@ str_replace("'", "\\'", $str)
 Note:
 參考admin 0, 簡單的 filter, 需要一點巧思()
 * [SQL injection with no spaces](https://stackoverflow.com/questions/49682143/sql-injection-with-no-spaces)
+
+---
+
+## login as admin 1.2 hint
+* 目標 : boolean-based SQL injection
+* 接續 login as admin 1, 程式碼一模一樣.
+* 切入點
+  * flag2 in the database!
+  * information_schema
+  * sqlmap 學習之路
+
+Note:SQL injection 撈資料應該都能使用 sqlmap 去跑, 只是可能需要客製化 payload.
+
+---
+
+## login as admin 1.2 safe_filter
+```
+strstr, " " || "1=1" || "''" || "union select" || "select "
+str_replace("'", "\\'", $str)
+```
+
+Note:
+參考sqlmap tamper, 簡單的 filter, 不只有一種 bypass 方法 `/**/`.
+* [tamper](https://github.com/sqlmapproject/sqlmap/tree/master/tamper)
+
+
+---
+
+## login as admin 1.2 sqlmap
+* --force-ssl, https 加上這個比較不會有問題. 
+* --technique=B, 已經提示 boolean-based, 可以不用測試其他的.
+* --tamper=space2comment,escapequotes, 原本使用 burp 去 replace, sqlmap 原生就有, 也可以自己客製化.
+* --risk=3 --level=5, 可以跑比較多的不同 payload.
+* `sqlmap/xml/payloads/*`, 已經確認可以跑的 payload, 可以自己改寫.
+* [Back to Web](#/1)
+
+Note:
+* 確認 sql injection 之後可以去改寫原始 payload, 撈資料會比較快.
 
 ---
 

