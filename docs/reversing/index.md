@@ -12,6 +12,7 @@ Note:title:"第一次解 Reversing 就上手"
 * [helloworld](#/2)
 * [simple](#/3)
 * [passthis](#/4)
+* [pyyy](#/5)
 
 Note:
 * IDA pro, F5 大絕招
@@ -52,6 +53,21 @@ Note:
 * 技術債
   * `iob[0]._ptr`, 是什麼?
   * 好像還有一些圖片和網路下載的操作.
+
+---
+
+## pyyy hint
+* 目標 : 取得 flag
+* pyc decompile
+
+Note:
+* pyc, Python bytecode
+* 用 010 Editor 打開可以看到像是組語的東西.
+* [code object](https://ctf-wiki.github.io/ctf-wiki/misc/other/pyc/), 有進階的難題可練習
+  * [Python程序的執行原理](http://python.jobbole.com/84599/), pyc format
+  * [opcode.h](https://github.com/python/cpython/blob/fc7df0e664198cb05cafd972f190a18ca422989c/Include/opcode.h)
+* [Python Decompiler](https://python-decompiler.com/)
+* [[Linux] 使用 Decompile++ (pycdc) 反組譯 pyc 檔案](https://ephrain.net/linux-%E4%BD%BF%E7%94%A8-decompile-pycdc-%E5%8F%8D%E7%B5%84%E8%AD%AF-pyc-%E6%AA%94%E6%A1%88/)
 
 ---
 
