@@ -16,6 +16,7 @@ Note:title:"第一次解 Reversing 就上手"
 * [accumulator](#/6)
 * [GCCC](#/7)
 * [ccc](#/8)
+* [bitx](#/9)
 
 Note:
 * IDA pro, F5 大絕招
@@ -120,6 +121,16 @@ Note:
   * [crc32.py](https://github.com/sam-b/z3-stuff/blob/master/crc32/crc32.py)
 * crc32 可以直接暴力破解
 * 想的太難了 qq
+
+---
+
+## bitx hint
+* 目標 : 取得 flag
+* IDA pro, F5 大絕招
+
+Note:
+* 太心急了, 沒有辨別出陣列取值, 這題真的蠻簡單.
+* 不要一直想要用 z3 解, 是沒有簡單解法, 而且符合數學可收斂狀態, 再使用.
 
 ---
 
