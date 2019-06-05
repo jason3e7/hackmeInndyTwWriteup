@@ -15,6 +15,7 @@ Note:title:"第一次解 Reversing 就上手"
 * [pyyy](#/5)
 * [accumulator](#/6)
 * [GCCC](#/7)
+* [ccc](#/8)
 
 Note:
 * IDA pro, F5 大絕招
@@ -101,9 +102,24 @@ Note:
 * 建立 .NET framework 的環境, 從 microsoft 抓.
 * 安裝 .NET Decompiler 的環境, 不只有一套.
 * 安裝 z3 的環境, 編譯有點久.
+* z3 要特別注意改寫之後的各個的 type.
 * z3 語法不熟, 不要忘記 control flow, 我真的傻了 qq.
 * `print Solver()`, 可以看一下裡面堆了什麼東西, debug 好用!?
 * GRAY CODE 是什麼?
+
+---
+
+## ccc hint
+* 目標 : 取得 flag
+* IDA pro, F5 大絕招
+
+Note:
+* 一開始就有發現 crc32("FLA") == 0xD641596F
+* 想說用 z3 解, 應該也是真的可以用 z3 解, 但是 crc32 要自己重寫
+  * [z3 crc example](https://gist.github.com/percontation/11310679)
+  * [crc32.py](https://github.com/sam-b/z3-stuff/blob/master/crc32/crc32.py)
+* crc32 可以直接暴力破解
+* 想的太難了 qq
 
 ---
 
