@@ -2,7 +2,7 @@
 # Reversing
 ### 就上手
 
-jason3e7 20190603
+jason3e7 20190605
 
 Note:title:"第一次解 Reversing 就上手"
 
@@ -14,6 +14,7 @@ Note:title:"第一次解 Reversing 就上手"
 * [passthis](#/4)
 * [pyyy](#/5)
 * [accumulator](#/6)
+* [GCCC](#/7)
 
 Note:
 * IDA pro, F5 大絕招
@@ -88,6 +89,21 @@ Note:
   * `dword_6013C0`, 值是什麼?
   * 這隻更多語法看不懂
 * [Online Tools](https://emn178.github.io/online-tools/index.html)
+
+---
+
+## GCCC hint
+* 目標 : 取得 flag
+* .NET Decompiler 大絕招, z3
+
+Note:
+* PE32 executable for MS Windows (console) Intel 80386 32-bit Mono/.Net assembly
+* 建立 .NET framework 的環境, 從 microsoft 抓.
+* 安裝 .NET Decompiler 的環境, 不只有一套.
+* 安裝 z3 的環境, 編譯有點久.
+* z3 語法不熟, 不要忘記 control flow, 我真的傻了 qq.
+* `print Solver()`, 可以看一下裡面堆了什麼東西, debug 好用!?
+* GRAY CODE 是什麼?
 
 ---
 

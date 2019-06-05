@@ -1,0 +1,68 @@
+public static void Main()
+{
+	Console.Write("Input the key: ");
+	if (!uint.TryParse(Console.ReadLine().Trim(), out uint result))
+	{
+		Console.WriteLine("Invalid key");
+		return;
+	}
+	string text = "";
+	string text2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ{} ";
+	int num = 0;
+	byte[] array = new byte[32]
+	{
+		164,
+		25,
+		4,
+		130,
+		126,
+		158,
+		91,
+		199,
+		173,
+		252,
+		239,
+		143,
+		150,
+		251,
+		126,
+		39,
+		104,
+		104,
+		146,
+		208,
+		249,
+		9,
+		219,
+		208,
+		101,
+		182,
+		62,
+		92,
+		6,
+		27,
+		5,
+		46
+	};
+	byte b = 0;
+	while (result != 0)
+	{
+		char c = (char)(array[num] ^ (byte)result ^ b);
+		if (!text2.Contains(new string(c, 1)))
+		{
+			Console.WriteLine("Invalid key");
+			return;
+		}
+		text += c;
+		b = (byte)(b ^ array[num++]);
+		result >>= 1;
+	}
+	if (text.Substring(0, 5) != "FLAG{" || text.Substring(31, 1) != "}")
+	{
+		Console.WriteLine("Invalid key");
+	}
+	else
+	{
+		Console.WriteLine("Your flag is: " + text);
+	}
+}
