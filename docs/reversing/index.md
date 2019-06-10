@@ -2,7 +2,7 @@
 # Reversing
 ### 就上手
 
-jason3e7 20190605
+jason3e7 20190610
 
 Note:title:"第一次解 Reversing 就上手"
 
@@ -17,6 +17,7 @@ Note:title:"第一次解 Reversing 就上手"
 * [GCCC](#/7)
 * [ccc](#/8)
 * [bitx](#/9)
+* [what-the-hell](#/10)
 
 Note:
 * IDA pro, F5 大絕招
@@ -131,6 +132,29 @@ Note:
 Note:
 * 太心急了, 沒有辨別出陣列取值, 這題真的蠻簡單.
 * 不要一直想要用 z3 解, 是沒有簡單解法, 而且符合數學可收斂狀態, 再使用.
+
+---
+
+## what-the-hell hint
+* 目標 : 取得 flag
+* IDA pro, F5 大絕招, z3
+
+Note:
+* ELF 32-bit LSB executable
+* 有數學式可以用 z3 先跑出可能性
+* [A Primality Test](https://primes.utm.edu/curios/includes/primetest.php)
+* 用 c 模擬 what function, 只有 int 的大小, Fibonacci 很快就會 overflow, 所以不能用正常方式檢查.
+  * [fibonacci number tester ](https://onlinemathtools.com/test-fibonacci-number)
+* [what-the-hell](https://www.cnblogs.com/WangAoBo/p/hackme_inndy_writeup.html#_label24), 是寫程式去模擬 decrypt_flag.
+* 這題的原始要考什麼呢?, `Tips: modinv, Something is slow there in my code, make it faster.`
+* [質因數在線計算器](http://www.ab126.com/shuxue/2822.html), 輸入是 unsigned int, 所以也可能是 overflow, 分解的值會錯.
+* c 的 main function 外面宣告的變數, 不能在外面直接改值嗎?
+* gdb, 有點回來了, 但是很多操作還是不熟.
+* IDA pro, patch file. 
+* 最近做的感覺已經不是 Reversing, 因為 F5 就出來了, 問題變成是
+  * 模擬執行
+  * runtime 修改參數
+  * patch file
 
 ---
 
