@@ -2,7 +2,7 @@
 # Reversing
 ### 就上手
 
-jason3e7 20190610
+jason3e7 20190613
 
 Note:title:"第一次解 Reversing 就上手"
 
@@ -17,7 +17,8 @@ Note:title:"第一次解 Reversing 就上手"
 * [GCCC](#/7)
 * [ccc](#/8)
 * [bitx](#/9)
-* [what-the-hell](#/10)
+* [2018-rev](#/10)
+* [what-the-hell](#/11)
 
 Note:
 * IDA pro, F5 大絕招
@@ -132,6 +133,22 @@ Note:
 Note:
 * 太心急了, 沒有辨別出陣列取值, 這題真的蠻簡單.
 * 不要一直想要用 z3 解, 是沒有簡單解法, 而且符合數學可收斂狀態, 再使用.
+
+---
+
+## 2018-rev hint
+* 目標 : 取得 flag
+* IDA pro, F5 大絕招好像沒用!?, gdb, `ni`, `si`.
+
+Note:
+* ELF 64-bit LSB executable, statically linked, stripped.
+* 有從外部滿足條件解法
+  * linux
+  * c, execve
+* 有從內部修改變數解法
+  * `if`
+  * simulation calculation flag.
+* 看的題目和程式太少了.
 
 ---
 
