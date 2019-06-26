@@ -2,28 +2,33 @@
 # Reversing
 ### 就上手
 
-jason3e7 20190613
+jason3e7 20190626
 
 Note:title:"第一次解 Reversing 就上手"
 
 ---
 
-# Reversing
-* [helloworld](#/2)
-* [simple](#/3)
-* [passthis](#/4)
-* [pyyy](#/5)
-* [accumulator](#/6)
-* [GCCC](#/7)
-* [ccc](#/8)
-* [bitx](#/9)
-* [2018-rev](#/10)
-* [what-the-hell](#/11)
+# Reversing part1
+* [helloworld](#/3)
+* [simple](#/4)
+* [passthis](#/5)
+* [pyyy](#/6)
+* [accumulator](#/7)
+* [GCCC](#/8)
+* [ccc](#/9)
+* [bitx](#/10)
+* [2018-rev](#/11)
+* [what-the-hell](#/12)
 
 Note:
 * IDA pro, F5 大絕招
 * 技術債
   * gdb
+
+---
+
+# Reversing part2
+* [a-maze](#/13)
 
 ---
 
@@ -172,6 +177,16 @@ Note:
   * 模擬執行
   * runtime 修改參數
   * patch file
+
+---
+
+## a-maze hint
+* 目標 : 取得 flag
+* IDA pro, F5 大絕招
+
+Note:
+* ELF 64-bit LSB executable, dynamically linked, stripped
+* `LODWORD(v2) = *(_DWORD *)(readFileBuffer + (v2 << 9) + 4LL * (*a1 & 0x7F));`, 好好看懂這行, 實作出來就有答案了.
 
 ---
 
